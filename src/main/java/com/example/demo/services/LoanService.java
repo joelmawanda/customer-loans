@@ -32,8 +32,6 @@ public class LoanService {
         if (loans.isEmpty()) {
             throw new NoLoanFoundException("No loan found");
         }
-        System.out.println("sssssssssssssssssssssssssssssssssss");
-        System.out.println(loans);
         return new LoanStatus(loans);
     }
 

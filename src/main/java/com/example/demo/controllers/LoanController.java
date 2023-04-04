@@ -25,7 +25,7 @@ public class LoanController {
     public ResponseEntity<?> getLoanStatus(@RequestParam("accountNumber") int accountNumber) {
         LoanStatus loans = loanService.getLoanStatus(accountNumber);
         System.out.println("oooooooooooooooooooooo " + loans);
-        return new ResponseEntity<>(new OperationResponse(Constants.OPERATION_SUCCESS_CODE, Constants.OPERATION_SUCCESS_DESCRIPTION, loans), HttpStatus.OK);
+        return new ResponseEntity<>(new OperationResponse(Constants.OPERATION_SUCCESS_CODE, Constants.OPERATION_SUCCESS_DESCRIPTION, "These are the customer's loans", loans), HttpStatus.OK);
     }
 }
 

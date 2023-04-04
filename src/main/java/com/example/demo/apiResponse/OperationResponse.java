@@ -25,6 +25,7 @@ import java.time.LocalDateTime;
         "timestamp",
         "operation_result",
         "operation_description",
+        "message",
         "data"})
 public class OperationResponse {
 
@@ -43,14 +44,16 @@ public class OperationResponse {
     @JsonProperty("data")
     private Object data;
 
-    public OperationResponse(int operationResult, String operationDescription) {
+    public OperationResponse(int operationResult, String operationDescription, String message) {
         this.operationResult = operationResult;
         this.operationDescription = operationDescription;
+        this.message = message;
     }
 
-    public OperationResponse(int operationResult, String operationDescription, Object data) {
+    public OperationResponse(int operationResult, String operationDescription, String message, Object data) {
         this.operationResult = operationResult;
         this.operationDescription = operationDescription;
+        this.message = message;
         this.data = data;
     }
 }
