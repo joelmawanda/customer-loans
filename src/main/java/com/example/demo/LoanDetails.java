@@ -20,8 +20,8 @@ public class LoanDetails {
     private BigDecimal outstandingAmount;
 
     public LoanDetails(Loan loan) {
-        this.customerId = loan.getId();
-        this.loanId = loan.getId();
+        this.customerId = loan.getCustomer().getCustomerId();
+        this.loanId = loan.getLoanId();
         this.disbursementDate = loan.getDisbursementDate();
         this.outstandingAmount = loan.getOutstandingAmount();
     }
