@@ -33,26 +33,6 @@ public class LoanServiceApplication implements CommandLineRunner {
 
 		Random random = new Random();
 
-//		int numCustomers = 10;
-//		int numLoans = random.nextInt(5) + 0; // Generate a random number of loans between 1 and 5 (inclusive)
-//		for (int i = 0; i < numCustomers; i++) {
-//			Customer customer = new Customer();
-//			int accountNumber = random.nextInt(900000000) + 1000000000; // Generate a random 10-digit number
-//			customer.setAccountNumber(accountNumber);
-//			customerRepository.save(customer);
-//
-//			for (int j = 0; j < numLoans; j++) {
-//				Loan loan = new Loan();
-//				int randomAmount = random.nextInt(100001); // Generates a random integer between 0 and 100000 (inclusive)
-//				BigDecimal randomBigDecimal = BigDecimal.valueOf(randomAmount);
-//				loan.setOutstandingAmount(randomBigDecimal);
-//				loan.setCustomer(customer);
-//				loanRepository.save(loan);
-//			}
-//
-//
-//		}
-
 		int numCustomers = 10;
 		int numLoans = random.nextInt(5) + 1; // Generate a random number of loans between 1 and 5 (inclusive)
 		for (int i = 0; i < numCustomers; i++) {
@@ -77,9 +57,5 @@ public class LoanServiceApplication implements CommandLineRunner {
 				loanRepository.save(loan);
 			}
 		}
-
-
-
-
 	}
 }
