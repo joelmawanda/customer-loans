@@ -8,6 +8,7 @@ import com.example.demo.exceptions.NoLoanFoundException;
 import com.example.demo.repositories.CustomerRepository;
 import com.example.demo.repositories.LoanRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -34,7 +35,6 @@ public class LoanService {
         }
         return new LoanStatus(loans);
     }
-
 
 }
 

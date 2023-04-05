@@ -4,6 +4,7 @@ import com.example.demo.apiResponse.OperationResponse;
 import jakarta.persistence.NonUniqueResultException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.MissingServletRequestParameterException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
@@ -32,6 +33,11 @@ public class ApplicationExceptionHandler {
 
     @ExceptionHandler(GenericServiceException.class)
     public ResponseEntity<OperationResponse> handleGenericServiceException(GenericServiceException ex) {
+        return new ResponseEntity<>(new OperationResponse(Constants.OPERATION_FAILURE_CODE, Constants.OPERATION_FAILED_DESCRIPTION, ex.getLocalizedMessage()), HttpStatus.INTERNAL_SERVER_ERROR);
+
+    }
+    @ExceptionHandler(MissingServletRequestParameterException.class)
+    public ResponseEntity<OperationResponse> handleMissingServletRequestParameterException(MissingServletRequestParameterException ex) {
         return new ResponseEntity<>(new OperationResponse(Constants.OPERATION_FAILURE_CODE, Constants.OPERATION_FAILED_DESCRIPTION, ex.getLocalizedMessage()), HttpStatus.INTERNAL_SERVER_ERROR);
     }
 
