@@ -152,40 +152,36 @@ public class LoanServiceApplication implements CommandLineRunner {
 			int accountNumber = 1000000000 + random.nextInt(900000000);
 			accountNumbers.add(accountNumber);
 		}
-
-		for (int accountNumber : accountNumbers) {
-			String url = endpointUrl + "?accountNumber=" + accountNumber;
-
-			ResponseEntity<String> response;
-			try {
-				response = restTemplate.exchange(url, HttpMethod.GET, new HttpEntity<>(headers), String.class);
-				if (response.getStatusCode() == HttpStatus.OK) {
-					try {
-						FileWriter writer = new FileWriter("response-" + accountNumber + ".txt");
+		try {
+			FileWriter writer = new FileWriter("response.txt", true);
+			for (int accountNumber : accountNumbers) {
+				String url = endpointUrl + "?accountNumber=" + accountNumber;
+				ResponseEntity<String> response;
+				try {
+					response = restTemplate.exchange(url, HttpMethod.GET, new HttpEntity<>(headers), String.class);
+					if (response.getStatusCode() == HttpStatus.OK) {
 						writer.write(response.getBody());
-						writer.close();
-					} catch (IOException e) {
-						throw new IOException("Error writing response to file: " + e.getMessage());
+						writer.write("\n");
+					} else {
+						log.info("API call failed with status code: " + response.getStatusCode());
 					}
-				} else {
-					log.info("API call failed with status code: " + response.getStatusCode());
-				}
-			} catch (HttpStatusCodeException ex) {
-				if (ex.getStatusCode() == HttpStatus.NOT_FOUND) {
-					try {
-						FileWriter writer = new FileWriter("response-" + accountNumber + ".txt");
+				} catch (HttpStatusCodeException ex) {
+					if (ex.getStatusCode() == HttpStatus.NOT_FOUND) {
 						writer.write(ex.getResponseBodyAsString());
-						writer.close();
-					} catch (IOException e) {
-						throw new IOException("Error writing response to file: " + e.getMessage());
+						writer.write("\n");
+					} else {
+						log.info("API call failed with error: " + ex.getLocalizedMessage());
 					}
-				} else {
-					log.info("API call failed with error: " + ex.getLocalizedMessage());
+				} catch (Exception ex) {
+					throw new GenericServiceException("An error occurred: " + ex.getLocalizedMessage());
 				}
-			}  catch (Exception ex) {
-				throw new GenericServiceException("An error occurred: " + ex.getLocalizedMessage());
 			}
+			writer.close();
+		} catch (IOException e) {
+			throw new IOException("Error writing response to file: " + e.getMessage());
 		}
+
+
 	}
 }
 
