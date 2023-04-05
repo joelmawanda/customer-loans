@@ -15,6 +15,7 @@ public class Loan {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "loan_id")
     private Long loanId;
 
     @ManyToOne(fetch = FetchType.EAGER, optional = false)
@@ -22,10 +23,10 @@ public class Loan {
     private Customer customer;
 
     @CreationTimestamp
-    @Column(name = "disbursement_date")
+    @Column(name = "disbursement_date", nullable = false)
     private LocalDateTime disbursementDate;
 
-    @Column(name = "outstanding_amount")
+    @Column(name = "outstanding_amount", nullable = false)
     private BigDecimal outstandingAmount;
 }
 

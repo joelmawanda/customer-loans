@@ -10,14 +10,10 @@ public class Customer {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "customer_id")
     private Long customerId;
 
-    @Column(name = "account_number")
+    @Column(name = "account_number", nullable = false, unique = true)
     private int accountNumber;
-
-    @Column(name = "hashed_password")
-    private String hashedPassword;
-
-
 }
 
