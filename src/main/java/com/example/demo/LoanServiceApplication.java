@@ -77,6 +77,9 @@ import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
 import org.springframework.web.client.HttpStatusCodeException;
 import org.springframework.web.client.RestTemplate;
+
+import java.io.FileWriter;
+import java.io.IOException;
 import java.math.BigDecimal;
 import java.nio.charset.StandardCharsets;
 import java.util.*;
@@ -123,24 +126,24 @@ public class LoanServiceApplication implements CommandLineRunner {
 				loanRepository.save(loan);
 			}
 		}
-
+		
 		// Define the base endpoint URL
 		String endpointUrl = "http://localhost:8080/api/v1/loan-status";
 
-// Define the headers (if any)
+		// Define the headers (if any)
 		HttpHeaders headers = new HttpHeaders();
 		String auth = "admin:admin";
 		byte[] encodedAuth = Base64.getEncoder().encode(auth.getBytes(StandardCharsets.US_ASCII));
 		String authHeader = "Basic " + new String(encodedAuth);
 		headers.set("Authorization", authHeader);
 
-// Create a RestTemplate object
+		// Create a RestTemplate object
 		RestTemplate restTemplate = new RestTemplate();
 
-// Define the list of account numbers to query
+		// Define the list of account numbers to query
 		List<Integer> accountNumbers = Arrays.asList(1107809807, 1234567890, 987654321);
 
-// Loop through the list of account numbers and make API calls for each account number
+		// Loop through the list of account numbers and make API calls for each account number
 		for (int accountNumber : accountNumbers) {
 			String url = endpointUrl + "?accountNumber=" + accountNumber;
 
@@ -150,21 +153,31 @@ public class LoanServiceApplication implements CommandLineRunner {
 				response = restTemplate.exchange(url, HttpMethod.GET, new HttpEntity<>(headers), String.class);
 				// Check the response status code
 				if (response.getStatusCode() == HttpStatus.OK) {
-					// Print the response content
-					System.out.println(response.getBody());
+					// Write the response to a text file
+					try {
+						FileWriter writer = new FileWriter("response-" + accountNumber + ".txt");
+						writer.write(response.getBody());
+						writer.close();
+					} catch (IOException e) {
+						System.out.println("Error writing response to file: " + e.getMessage());
+					}
 				} else {
 					// Handle the error
 					System.out.println("API call failed with status code: " + response.getStatusCode());
 				}
-			} catch (HttpStatusCodeException e) {
-				if (e.getStatusCode() == HttpStatus.BAD_REQUEST) {
+			} catch (HttpStatusCodeException ex) {
+				if (ex.getStatusCode() == HttpStatus.BAD_REQUEST && ex.getResponseBodyAsString().contains("InvalidAccountNumberException")) {
+					// Handle the invalid account number exception
 					System.out.println("Invalid account number: " + accountNumber);
 				} else {
-					System.out.println("API call failed with status code: " + e.getStatusCode());
+					// Handle other HTTP client errors
+					System.out.println("API call failed with error: " + ex.getLocalizedMessage());
 				}
+			}  catch (Exception ex) {
+				// Handle other exceptions
+				System.out.println("An error occurred: " + ex.getMessage());
 			}
 		}
-
 	}
 }
 
