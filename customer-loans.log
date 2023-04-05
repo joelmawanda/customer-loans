@@ -1,0 +1,51 @@
+2023-04-05T16:55:53.560+03:00  INFO 23444 --- [main] c.example.demo.LoanServiceApplication    : Starting LoanServiceApplication using Java 17.0.4 with PID 23444 (C:\MY_PROJECTS\customer-loans\target\classes started by C849152 in C:\MY_PROJECTS\customer-loans)
+2023-04-05T16:55:53.568+03:00  INFO 23444 --- [main] c.example.demo.LoanServiceApplication    : The following 1 profile is active: "dev"
+2023-04-05T16:55:54.954+03:00  INFO 23444 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-04-05T16:55:55.092+03:00  INFO 23444 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 122 ms. Found 2 JPA repository interfaces.
+2023-04-05T16:55:56.551+03:00  INFO 23444 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-04-05T16:55:56.573+03:00  INFO 23444 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-04-05T16:55:56.574+03:00  INFO 23444 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.7]
+2023-04-05T16:55:56.851+03:00  INFO 23444 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-04-05T16:55:56.853+03:00  INFO 23444 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3158 ms
+2023-04-05T16:55:57.270+03:00  INFO 23444 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-04-05T16:55:57.406+03:00  INFO 23444 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.1.7.Final
+2023-04-05T16:55:58.057+03:00  INFO 23444 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-04-05T16:55:58.447+03:00  INFO 23444 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@87f501f
+2023-04-05T16:55:58.451+03:00  INFO 23444 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-04-05T16:55:58.969+03:00  INFO 23444 --- [main] SQL dialect                              : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2023-04-05T16:56:01.358+03:00  INFO 23444 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-04-05T16:56:01.373+03:00  INFO 23444 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-04-05T16:56:02.277+03:00  WARN 23444 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-04-05T16:56:02.711+03:00  INFO 23444 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@4088702d, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4c24c40a, org.springframework.security.web.context.SecurityContextHolderFilter@738ed8f5, org.springframework.security.web.header.HeaderWriterFilter@1ddc8fc, org.springframework.security.web.authentication.logout.LogoutFilter@1bb51492, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@2245ccaa, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@478c84aa, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7c45191e, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6636448b, org.springframework.security.web.access.ExceptionTranslationFilter@221961af, org.springframework.security.web.access.intercept.AuthorizationFilter@61b76a7d]
+2023-04-05T16:56:03.338+03:00  INFO 23444 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-04-05T16:56:03.354+03:00  INFO 23444 --- [main] c.example.demo.LoanServiceApplication    : Started LoanServiceApplication in 10.817 seconds (process running for 11.907)
+2023-04-05T16:56:03.358+03:00  INFO 23444 --- [main] c.example.demo.LoanServiceApplication    : [Inside the CommandLineRunner method]: persisting customer data to the database
+2023-04-05T16:56:03.861+03:00  INFO 23444 --- [main] c.example.demo.LoanServiceApplication    : [Inside the CommandLineRunner method]: calling the RestTemplate class which invokes the api
+2023-04-05T16:56:04.038+03:00  INFO 23444 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-04-05T16:56:04.039+03:00  INFO 23444 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-04-05T16:56:04.041+03:00  INFO 23444 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2023-04-05T16:56:04.356+03:00  INFO 23444 --- [http-nio-8080-exec-1] com.example.demo.services.LoanService    : [Inside the getLoanStatus method]: Retrieving customer loans from the database
+2023-04-05T16:56:04.610+03:00  INFO 23444 --- [http-nio-8080-exec-2] com.example.demo.services.LoanService    : [Inside the getLoanStatus method]: Retrieving customer loans from the database
+2023-04-05T16:56:04.732+03:00  INFO 23444 --- [http-nio-8080-exec-3] com.example.demo.services.LoanService    : [Inside the getLoanStatus method]: Retrieving customer loans from the database
+2023-04-05T17:14:18.435+03:00  INFO 32980 --- [main] c.example.demo.LoanServiceApplication    : Starting LoanServiceApplication using Java 17.0.4 with PID 32980 (C:\MY_PROJECTS\customer-loans\target\classes started by C849152 in C:\MY_PROJECTS\customer-loans)
+2023-04-05T17:14:18.447+03:00  INFO 32980 --- [main] c.example.demo.LoanServiceApplication    : The following 1 profile is active: "dev"
+2023-04-05T17:14:20.022+03:00  INFO 32980 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-04-05T17:14:20.157+03:00  INFO 32980 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 107 ms. Found 2 JPA repository interfaces.
+2023-04-05T17:14:21.585+03:00  INFO 32980 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-04-05T17:14:21.604+03:00  INFO 32980 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-04-05T17:14:21.605+03:00  INFO 32980 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.7]
+2023-04-05T17:14:21.832+03:00  INFO 32980 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-04-05T17:14:21.833+03:00  INFO 32980 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3245 ms
+2023-04-05T17:14:22.194+03:00  INFO 32980 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-04-05T17:14:22.322+03:00  INFO 32980 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.1.7.Final
+2023-04-05T17:14:23.021+03:00  INFO 32980 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-04-05T17:14:23.428+03:00  INFO 32980 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@935493d
+2023-04-05T17:14:23.433+03:00  INFO 32980 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-04-05T17:14:24.003+03:00  INFO 32980 --- [main] SQL dialect                              : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2023-04-05T17:14:26.193+03:00  INFO 32980 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-04-05T17:14:26.213+03:00  INFO 32980 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-04-05T17:14:27.038+03:00  WARN 32980 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-04-05T17:14:27.398+03:00  INFO 32980 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@3fcc7f5c, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7512a9a6, org.springframework.security.web.context.SecurityContextHolderFilter@63551c66, org.springframework.security.web.header.HeaderWriterFilter@221cdd87, org.springframework.security.web.authentication.logout.LogoutFilter@642614b7, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@393e7546, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4cf15477, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5da1a97f, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@32fd5bc, org.springframework.security.web.access.ExceptionTranslationFilter@2eea4441, org.springframework.security.web.access.intercept.AuthorizationFilter@6bfdaed7]
+2023-04-05T17:14:28.064+03:00  INFO 32980 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-04-05T17:14:28.082+03:00  INFO 32980 --- [main] c.example.demo.LoanServiceApplication    : Started LoanServiceApplication in 10.755 seconds (process running for 12.984)
+2023-04-05T17:14:28.086+03:00  INFO 32980 --- [main] c.example.demo.LoanServiceApplication    : [Inside the CommandLineRunner method]: persisting customer data to the database

@@ -65,8 +65,10 @@
 package com.example.demo;
 import com.example.demo.entities.Customer;
 import com.example.demo.entities.Loan;
+import com.example.demo.exceptions.GenericServiceException;
 import com.example.demo.repositories.CustomerRepository;
 import com.example.demo.repositories.LoanRepository;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -85,6 +87,7 @@ import java.nio.charset.StandardCharsets;
 import java.util.*;
 
 @SpringBootApplication(exclude = {SecurityAutoConfiguration.class})
+@Slf4j
 public class LoanServiceApplication implements CommandLineRunner {
 
 	public static void main(String[] args) {
@@ -99,6 +102,8 @@ public class LoanServiceApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
+
+		log.info("[Inside the CommandLineRunner method]: persisting customer data to the database");
 
 		Random random = new Random();
 
@@ -127,6 +132,8 @@ public class LoanServiceApplication implements CommandLineRunner {
 			}
 		}
 
+		log.info("[Inside the CommandLineRunner method]: calling the RestTemplate class which invokes the api");
+
 		String endpointUrl = "http://localhost:8080/api/v1/loan-status";
 
 		HttpHeaders headers = new HttpHeaders();
@@ -136,10 +143,12 @@ public class LoanServiceApplication implements CommandLineRunner {
 		headers.set("Authorization", authHeader);
 
 		RestTemplate restTemplate = new RestTemplate();
-		
+
 		List<Integer> accountNumbers = new ArrayList<>();
 
-		for (int i = 0; i < 3; i++) {
+		int numAccounts = 3;
+
+		for (int i = 0; i < numAccounts; i++) {
 			int accountNumber = 1000000000 + random.nextInt(900000000);
 			accountNumbers.add(accountNumber);
 		}
@@ -156,10 +165,10 @@ public class LoanServiceApplication implements CommandLineRunner {
 						writer.write(response.getBody());
 						writer.close();
 					} catch (IOException e) {
-						System.out.println("Error writing response to file: " + e.getMessage());
+						throw new IOException("Error writing response to file: " + e.getMessage());
 					}
 				} else {
-					System.out.println("API call failed with status code: " + response.getStatusCode());
+					log.info("API call failed with status code: " + response.getStatusCode());
 				}
 			} catch (HttpStatusCodeException ex) {
 				if (ex.getStatusCode() == HttpStatus.NOT_FOUND) {
@@ -168,13 +177,13 @@ public class LoanServiceApplication implements CommandLineRunner {
 						writer.write(ex.getResponseBodyAsString());
 						writer.close();
 					} catch (IOException e) {
-						System.out.println("Error writing response to file: " + e.getMessage());
+						throw new IOException("Error writing response to file: " + e.getMessage());
 					}
 				} else {
-					System.out.println("API call failed with error: " + ex.getLocalizedMessage());
+					log.info("API call failed with error: " + ex.getLocalizedMessage());
 				}
 			}  catch (Exception ex) {
-				System.out.println("An error occurred: " + ex.getMessage());
+				throw new GenericServiceException("An error occurred: " + ex.getLocalizedMessage());
 			}
 		}
 	}
