@@ -7,6 +7,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.MissingServletRequestParameterException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
+import org.springframework.web.client.HttpClientErrorException;
 
 @RestControllerAdvice
 public class ApplicationExceptionHandler {
@@ -38,6 +39,10 @@ public class ApplicationExceptionHandler {
     }
     @ExceptionHandler(MissingServletRequestParameterException.class)
     public ResponseEntity<OperationResponse> handleMissingServletRequestParameterException(MissingServletRequestParameterException ex) {
+        return new ResponseEntity<>(new OperationResponse(Constants.OPERATION_FAILURE_CODE, Constants.OPERATION_FAILED_DESCRIPTION, ex.getLocalizedMessage()), HttpStatus.INTERNAL_SERVER_ERROR);
+    }
+    @ExceptionHandler(HttpClientErrorException.class)
+    public ResponseEntity<OperationResponse> handleHttpClientErrorExceptionException(HttpClientErrorException ex) {
         return new ResponseEntity<>(new OperationResponse(Constants.OPERATION_FAILURE_CODE, Constants.OPERATION_FAILED_DESCRIPTION, ex.getLocalizedMessage()), HttpStatus.INTERNAL_SERVER_ERROR);
     }
 

@@ -75,12 +75,11 @@ import org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfi
 import org.springframework.http.*;
 import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
+import org.springframework.web.client.HttpStatusCodeException;
 import org.springframework.web.client.RestTemplate;
 import java.math.BigDecimal;
 import java.nio.charset.StandardCharsets;
-import java.util.Base64;
-import java.util.Optional;
-import java.util.Random;
+import java.util.*;
 
 @SpringBootApplication(exclude = {SecurityAutoConfiguration.class})
 public class LoanServiceApplication implements CommandLineRunner {
@@ -125,31 +124,47 @@ public class LoanServiceApplication implements CommandLineRunner {
 			}
 		}
 
-		// Define the endpoint URL
-		int accountNumber = 1107809807;
-		String endpointUrl = "http://localhost:8080/api/v1/loan-status?accountNumber=" + accountNumber;
+		// Define the base endpoint URL
+		String endpointUrl = "http://localhost:8080/api/v1/loan-status";
 
-		// Define the headers (if any)
+// Define the headers (if any)
 		HttpHeaders headers = new HttpHeaders();
 		String auth = "admin:admin";
 		byte[] encodedAuth = Base64.getEncoder().encode(auth.getBytes(StandardCharsets.US_ASCII));
 		String authHeader = "Basic " + new String(encodedAuth);
 		headers.set("Authorization", authHeader);
 
-		// Create a RestTemplate object
+// Create a RestTemplate object
 		RestTemplate restTemplate = new RestTemplate();
 
-		// Make the API call
-		ResponseEntity<String> response = restTemplate.exchange(endpointUrl, HttpMethod.GET, new HttpEntity<>(headers), String.class);
+// Define the list of account numbers to query
+		List<Integer> accountNumbers = Arrays.asList(1107809807, 1234567890, 987654321);
 
-		// Check the response status code
-		if (response.getStatusCode() == HttpStatus.OK) {
-			// Print the response content
-			System.out.println(response.getBody());
-		} else {
-			// Handle the error
-			System.out.println("API call failed with status code: " + response.getStatusCode());
+// Loop through the list of account numbers and make API calls for each account number
+		for (int accountNumber : accountNumbers) {
+			String url = endpointUrl + "?accountNumber=" + accountNumber;
+
+			// Make the API call
+			ResponseEntity<String> response;
+			try {
+				response = restTemplate.exchange(url, HttpMethod.GET, new HttpEntity<>(headers), String.class);
+				// Check the response status code
+				if (response.getStatusCode() == HttpStatus.OK) {
+					// Print the response content
+					System.out.println(response.getBody());
+				} else {
+					// Handle the error
+					System.out.println("API call failed with status code: " + response.getStatusCode());
+				}
+			} catch (HttpStatusCodeException e) {
+				if (e.getStatusCode() == HttpStatus.BAD_REQUEST) {
+					System.out.println("Invalid account number: " + accountNumber);
+				} else {
+					System.out.println("API call failed with status code: " + e.getStatusCode());
+				}
+			}
 		}
+
 	}
 }
 
