@@ -146,7 +146,7 @@ public class LoanServiceApplication implements CommandLineRunner {
 
 		List<Integer> accountNumbers = new ArrayList<>();
 
-		int numAccounts = 3;
+		int numAccounts = 50;
 
 		for (int i = 0; i < numAccounts; i++) {
 			int accountNumber = 1000000000 + random.nextInt(900000000);
