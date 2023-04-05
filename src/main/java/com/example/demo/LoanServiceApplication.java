@@ -136,9 +136,7 @@ public class LoanServiceApplication implements CommandLineRunner {
 		headers.set("Authorization", authHeader);
 
 		RestTemplate restTemplate = new RestTemplate();
-
-//		List<Integer> accountNumbers = Arrays.asList(1107809807, 1234567890, 987654321);
-
+		
 		List<Integer> accountNumbers = new ArrayList<>();
 
 		for (int i = 0; i < 3; i++) {
