@@ -103,9 +103,9 @@ public class LoanServiceApplication implements CommandLineRunner {
 		Random random = new Random();
 
 		int numCustomers = 10;
-		int numLoans = random.nextInt(5) + 1; // Generate a random number of loans between 1 and 5 (inclusive)
+		int numLoans = random.nextInt(5) + 1;
 		for (int i = 0; i < numCustomers; i++) {
-			int accountNumber = random.nextInt(900000000) + 1000000000; // Generate a random 10-digit number
+			int accountNumber = random.nextInt(900000000) + 1000000000;
 			Optional<Customer> optionalCustomer = customerRepository.findByAccountNumber(accountNumber);
 
 			Customer customer;
@@ -119,41 +119,40 @@ public class LoanServiceApplication implements CommandLineRunner {
 
 			for (int j = 0; j < numLoans; j++) {
 				Loan loan = new Loan();
-				int randomAmount = random.nextInt(100001); // Generates a random integer between 0 and 100000 (inclusive)
+				int randomAmount = random.nextInt(100001);
 				BigDecimal randomBigDecimal = BigDecimal.valueOf(randomAmount);
 				loan.setOutstandingAmount(randomBigDecimal);
 				loan.setCustomer(customer);
 				loanRepository.save(loan);
 			}
 		}
-		
-		// Define the base endpoint URL
+
 		String endpointUrl = "http://localhost:8080/api/v1/loan-status";
 
-		// Define the headers (if any)
 		HttpHeaders headers = new HttpHeaders();
 		String auth = "admin:admin";
 		byte[] encodedAuth = Base64.getEncoder().encode(auth.getBytes(StandardCharsets.US_ASCII));
 		String authHeader = "Basic " + new String(encodedAuth);
 		headers.set("Authorization", authHeader);
 
-		// Create a RestTemplate object
 		RestTemplate restTemplate = new RestTemplate();
 
-		// Define the list of account numbers to query
-		List<Integer> accountNumbers = Arrays.asList(1107809807, 1234567890, 987654321);
+//		List<Integer> accountNumbers = Arrays.asList(1107809807, 1234567890, 987654321);
 
-		// Loop through the list of account numbers and make API calls for each account number
+		List<Integer> accountNumbers = new ArrayList<>();
+
+		for (int i = 0; i < 3; i++) {
+			int accountNumber = 1000000000 + random.nextInt(900000000);
+			accountNumbers.add(accountNumber);
+		}
+
 		for (int accountNumber : accountNumbers) {
 			String url = endpointUrl + "?accountNumber=" + accountNumber;
 
-			// Make the API call
 			ResponseEntity<String> response;
 			try {
 				response = restTemplate.exchange(url, HttpMethod.GET, new HttpEntity<>(headers), String.class);
-				// Check the response status code
 				if (response.getStatusCode() == HttpStatus.OK) {
-					// Write the response to a text file
 					try {
 						FileWriter writer = new FileWriter("response-" + accountNumber + ".txt");
 						writer.write(response.getBody());
@@ -162,19 +161,21 @@ public class LoanServiceApplication implements CommandLineRunner {
 						System.out.println("Error writing response to file: " + e.getMessage());
 					}
 				} else {
-					// Handle the error
 					System.out.println("API call failed with status code: " + response.getStatusCode());
 				}
 			} catch (HttpStatusCodeException ex) {
-				if (ex.getStatusCode() == HttpStatus.BAD_REQUEST && ex.getResponseBodyAsString().contains("InvalidAccountNumberException")) {
-					// Handle the invalid account number exception
-					System.out.println("Invalid account number: " + accountNumber);
+				if (ex.getStatusCode() == HttpStatus.NOT_FOUND) {
+					try {
+						FileWriter writer = new FileWriter("response-" + accountNumber + ".txt");
+						writer.write(ex.getResponseBodyAsString());
+						writer.close();
+					} catch (IOException e) {
+						System.out.println("Error writing response to file: " + e.getMessage());
+					}
 				} else {
-					// Handle other HTTP client errors
 					System.out.println("API call failed with error: " + ex.getLocalizedMessage());
 				}
 			}  catch (Exception ex) {
-				// Handle other exceptions
 				System.out.println("An error occurred: " + ex.getMessage());
 			}
 		}
