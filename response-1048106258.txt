@@ -1,1 +1,0 @@
-{"timestamp":"05-04-2023 16:39:58","operation_result":1,"operation_description":"Failed","message":"Invalid account number"}
