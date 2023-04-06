@@ -7,6 +7,7 @@ import org.springframework.data.annotation.CreatedDate;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.Date;
+import java.util.Set;
 
 @Entity
 @Table(name = "loans")
@@ -28,5 +29,6 @@ public class Loan {
 
     @Column(name = "outstanding_amount", nullable = false)
     private BigDecimal outstandingAmount;
+
 }
 

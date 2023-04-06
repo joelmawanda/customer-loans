@@ -3,6 +3,8 @@ package com.example.demo.entities;
 import jakarta.persistence.*;
 import lombok.Data;
 
+import java.util.Set;
+
 @Entity
 @Table(name = "customers")
 @Data
@@ -15,5 +17,8 @@ public class Customer {
 
     @Column(name = "account_number", nullable = false, unique = true)
     private int accountNumber;
+
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "customer", cascade = CascadeType.ALL)
+    private Set<Loan> loans;
 }
 
