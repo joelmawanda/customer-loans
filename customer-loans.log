@@ -1772,3 +1772,35 @@
 2023-04-06T21:16:09.608+03:00  INFO 18624 --- [main] c.example.demo.LoanServiceApplication    : API call failed with error: 403 : [no body]
 2023-04-06T21:16:09.615+03:00  INFO 18624 --- [main] c.example.demo.LoanServiceApplication    : API call failed with error: 403 : [no body]
 2023-04-06T21:16:09.625+03:00  INFO 18624 --- [main] c.example.demo.LoanServiceApplication    : API call failed with error: 403 : [no body]
+2023-04-06T21:17:34.377+03:00  INFO 22588 --- [main] c.example.demo.LoanServiceApplication    : Starting LoanServiceApplication using Java 17.0.4 with PID 22588 (C:\MY_PROJECTS\customer-loans\target\classes started by c849152 in C:\MY_PROJECTS\customer-loans)
+2023-04-06T21:17:34.381+03:00  INFO 22588 --- [main] c.example.demo.LoanServiceApplication    : The following 1 profile is active: "dev"
+2023-04-06T21:17:35.575+03:00  INFO 22588 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-04-06T21:17:35.672+03:00  INFO 22588 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 85 ms. Found 3 JPA repository interfaces.
+2023-04-06T21:17:36.495+03:00  INFO 22588 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-04-06T21:17:36.509+03:00  INFO 22588 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-04-06T21:17:36.509+03:00  INFO 22588 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.7]
+2023-04-06T21:17:36.648+03:00  INFO 22588 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-04-06T21:17:36.649+03:00  INFO 22588 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2209 ms
+2023-04-06T21:17:36.919+03:00  INFO 22588 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-04-06T21:17:36.999+03:00  INFO 22588 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.1.7.Final
+2023-04-06T21:17:37.361+03:00  INFO 22588 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-04-06T21:17:37.617+03:00  INFO 22588 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@30ffb2a6
+2023-04-06T21:17:37.619+03:00  INFO 22588 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-04-06T21:17:37.878+03:00  INFO 22588 --- [main] SQL dialect                              : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2023-04-06T21:17:38.997+03:00  INFO 22588 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-04-06T21:17:39.014+03:00  INFO 22588 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-04-06T21:17:39.646+03:00  WARN 22588 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-04-06T21:17:40.080+03:00  INFO 22588 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 14 endpoint(s) beneath base path '/admin'
+2023-04-06T21:17:40.127+03:00  INFO 22588 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@5cd6a827, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6cd65042, org.springframework.security.web.context.SecurityContextHolderFilter@2e564c78, org.springframework.security.web.header.HeaderWriterFilter@689eab53, org.springframework.web.filter.CorsFilter@7674f9d4, org.springframework.security.web.authentication.logout.LogoutFilter@5ed88e31, com.example.demo.filter.JwtAuthFilter@3f6a9ba0, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@11267e87, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2b6ff016, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@4b5ceb5d, org.springframework.security.web.session.SessionManagementFilter@6f30d0eb, org.springframework.security.web.access.ExceptionTranslationFilter@229c4d34, org.springframework.security.web.access.intercept.AuthorizationFilter@7da9b32c]
+2023-04-06T21:17:40.429+03:00  INFO 22588 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-04-06T21:17:40.455+03:00  INFO 22588 --- [main] c.example.demo.LoanServiceApplication    : Started LoanServiceApplication in 6.639 seconds (process running for 7.191)
+2023-04-06T21:17:40.683+03:00  INFO 22588 --- [main] c.example.demo.LoanServiceApplication    : [Inside the CommandLineRunner method]: persisting customer data to the database
+2023-04-06T21:17:41.051+03:00  INFO 22588 --- [main] c.example.demo.LoanServiceApplication    : [Inside the CommandLineRunner method]: calling the RestTemplate class which invokes the api
+2023-04-06T21:17:41.142+03:00  INFO 22588 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-04-06T21:17:41.143+03:00  INFO 22588 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-04-06T21:17:41.143+03:00  INFO 22588 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2023-04-06T21:17:41.203+03:00  INFO 22588 --- [main] c.example.demo.LoanServiceApplication    : API call failed with error: 403 : [no body]
+2023-04-06T21:17:41.211+03:00  INFO 22588 --- [main] c.example.demo.LoanServiceApplication    : API call failed with error: 403 : [no body]
+2023-04-06T21:17:41.219+03:00  INFO 22588 --- [main] c.example.demo.LoanServiceApplication    : API call failed with error: 403 : [no body]
+2023-04-06T21:17:41.229+03:00  INFO 22588 --- [main] c.example.demo.LoanServiceApplication    : API call failed with error: 403 : [no body]
+2023-04-06T21:17:41.237+03:00  INFO 22588 --- [main] c.example.demo.LoanServiceApplication    : API call failed with error: 403 : [no body]
