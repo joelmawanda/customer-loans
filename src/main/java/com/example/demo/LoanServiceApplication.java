@@ -65,16 +65,21 @@
 package com.example.demo;
 import com.example.demo.entities.Customer;
 import com.example.demo.entities.Loan;
+import com.example.demo.entities.UserInfo;
 import com.example.demo.exceptions.GenericServiceException;
 import com.example.demo.repositories.CustomerRepository;
 import com.example.demo.repositories.LoanRepository;
+import com.example.demo.repositories.UserInfoRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration;
+import org.springframework.context.annotation.Bean;
 import org.springframework.http.*;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
 import org.springframework.web.client.HttpStatusCodeException;
@@ -100,8 +105,18 @@ public class LoanServiceApplication implements CommandLineRunner {
 	@Autowired
 	LoanRepository loanRepository;
 
+	@Autowired
+	UserInfoRepository userInfoRepository;
+
 	@Override
 	public void run(String... args) throws Exception {
+
+		PasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+
+		UserInfo user = new UserInfo();
+		user.setName("admin");
+		user.setPassword(passwordEncoder.encode("admin"));
+		userInfoRepository.save(user);
 
 		log.info("[Inside the CommandLineRunner method]: persisting customer data to the database");
 
