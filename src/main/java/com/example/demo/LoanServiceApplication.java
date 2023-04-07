@@ -111,13 +111,14 @@ public class LoanServiceApplication implements CommandLineRunner {
 			}
 		}
 
-		String username = "admin";
-		String password = "admin";
+		String username = DEFAULT_ADMIN_USERNAME;
+		String password = DEFAULT_ADMIN_PASSWORD;
+
 		String token = null;
 
-		Authentication authentication = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(username, password));
+		Authentication authentication = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(DEFAULT_ADMIN_USERNAME, DEFAULT_ADMIN_PASSWORD));
 		if (authentication.isAuthenticated()) {
-			token = jwtService.generateToken(username);
+			token = jwtService.generateToken(DEFAULT_ADMIN_USERNAME);
 			log.info("The generated token is: " + token);
 		} else {
 			throw new UsernameNotFoundException("invalid user request !");
