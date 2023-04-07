@@ -3,6 +3,7 @@ package com.example.demo;
 
 import com.example.demo.entities.Customer;
 import com.example.demo.entities.Loan;
+import com.example.demo.entities.UserInfo;
 import com.example.demo.exceptions.GenericServiceException;
 import com.example.demo.repositories.CustomerRepository;
 import com.example.demo.repositories.LoanRepository;
@@ -36,6 +37,10 @@ import java.util.Random;
 @Slf4j
 public class LoanServiceApplication implements CommandLineRunner {
 
+	private static  final String DEFAULT_ADMIN_USERNAME = "admin";
+	private static  final String DEFAULT_ADMIN_PASSWORD = "admin";
+	private static  final String DEFAULT_ADMIN_ROLES = "ADMIN";
+
 	public static void main(String[] args) {
 		SpringApplication.run(LoanServiceApplication.class, args);
 	}
@@ -60,17 +65,22 @@ public class LoanServiceApplication implements CommandLineRunner {
 
 		PasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
 
-//		log.info("querying for user by name...");
-//		UserInfo user = new UserInfo();
-//		UserInfo optionalUser = userInfoRepository.findByName(user.getName()).orElse(null);
-//		log.info("system found " + optionalUser);
-//		if (optionalUser == null) {
-//			UserInfo newUser = new UserInfo();
-//			newUser.setName("admin");
-//			newUser.setPassword(passwordEncoder.encode("admin"));
-//			newUser.setRoles("ADMIN");
-//			userInfoRepository.save(newUser);
-//		}
+		String adminUsername = DEFAULT_ADMIN_USERNAME;
+
+		log.info("Searching for user with name: " + adminUsername);
+
+		Optional<UserInfo> optionalUser = userInfoRepository.findByName(adminUsername);
+		if (optionalUser.isPresent()) {
+			log.info("Found User: " + optionalUser.get());
+		} else {
+			log.info("User not found, creating new user with default values");
+			UserInfo newUser = new UserInfo();
+			newUser.setName(DEFAULT_ADMIN_USERNAME);
+			newUser.setPassword(passwordEncoder.encode(DEFAULT_ADMIN_PASSWORD));
+			newUser.setRoles(DEFAULT_ADMIN_ROLES);
+			userInfoRepository.save(newUser);
+			log.info("New user created: " + newUser);
+		}
 
 		log.info("[Inside the CommandLineRunner method]: persisting customer data to the database");
 

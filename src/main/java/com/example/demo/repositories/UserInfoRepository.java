@@ -12,9 +12,4 @@ import java.util.Optional;
 
 public interface UserInfoRepository extends JpaRepository<UserInfo, Long> {
     Optional<UserInfo> findByName(String username);
-
-    @Modifying
-    @Transactional
-    @Query("DELETE from users u where u.name=:name")
-    public int deleteUser(@Param("name") String name);
 }
