@@ -110,10 +110,7 @@ public class LoanServiceApplication implements CommandLineRunner {
 				loanRepository.save(loan);
 			}
 		}
-
-		String username = DEFAULT_ADMIN_USERNAME;
-		String password = DEFAULT_ADMIN_PASSWORD;
-
+		
 		String token = null;
 
 		Authentication authentication = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(DEFAULT_ADMIN_USERNAME, DEFAULT_ADMIN_PASSWORD));
