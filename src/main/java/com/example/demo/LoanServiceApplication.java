@@ -157,6 +157,10 @@ public class LoanServiceApplication implements CommandLineRunner {
 		String authHeader = "Basic " + new String(encodedAuth);
 		headers.set("Authorization", authHeader);
 
+//		HttpHeaders headers = new HttpHeaders();
+//		String token = "your-access-token";
+//		headers.set("Authorization", "Bearer " + token);
+
 		RestTemplate restTemplate = new RestTemplate();
 
 		List<Integer> accountNumbers = new ArrayList<>();

@@ -16,7 +16,7 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/api/v1")
+@RequestMapping("/api/v1/loans") 
 public class LoanController {
 
     @Autowired
@@ -28,7 +28,7 @@ public class LoanController {
     @Autowired
     private AuthenticationManager authenticationManager;
 
-    @GetMapping("/loan-status")
+    @GetMapping("/status")
     public ResponseEntity<?> getLoanStatus(@RequestParam("accountNumber") int accountNumber) {
         LoanStatus loans = loanService.getLoanStatus(accountNumber);
         return new ResponseEntity<>(new OperationResponse(Constants.OPERATION_SUCCESS_CODE, Constants.OPERATION_SUCCESS_DESCRIPTION, "These are the customer's loans", loans), HttpStatus.OK);
