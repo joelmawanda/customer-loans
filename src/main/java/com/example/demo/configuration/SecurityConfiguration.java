@@ -34,14 +34,15 @@ public class SecurityConfiguration {
     public UserDetailsService userDetailsService() {
         return new UserInfoUserDetailsService();
     }
-    
+
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         return http.cors().configurationSource(corsConfigurationSource()).and()
                 .csrf().disable()
                 .authorizeHttpRequests()
                 .requestMatchers("/api/v1/loans/authenticate").permitAll()
-                .anyRequest().authenticated().and()
+                .anyRequest().authenticated()
+                .and()
                 .sessionManagement()
                 .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                 .and()
