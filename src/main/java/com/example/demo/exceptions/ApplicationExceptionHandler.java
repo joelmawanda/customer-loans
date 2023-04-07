@@ -1,6 +1,7 @@
 package com.example.demo.exceptions;
 import com.example.demo.apiResponse.Constants;
 import com.example.demo.apiResponse.OperationResponse;
+import io.jsonwebtoken.ExpiredJwtException;
 import jakarta.persistence.NonUniqueResultException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -56,6 +57,11 @@ public class ApplicationExceptionHandler {
     @ExceptionHandler(HttpMessageNotReadableException.class)
     public ResponseEntity<OperationResponse> handleHttpMessageNotReadableException(HttpMessageNotReadableException ex) {
         return new ResponseEntity<>(new OperationResponse(Constants.OPERATION_FAILURE_CODE, Constants.OPERATION_FAILED_DESCRIPTION, "Required request body is missing"), HttpStatus.FORBIDDEN);
+    }
+
+    @ExceptionHandler(ExpiredJwtException.class)
+    public ResponseEntity<OperationResponse> handleExpiredJwtException(ExpiredJwtException ex) {
+        return new ResponseEntity<>(new OperationResponse(Constants.OPERATION_FAILURE_CODE, Constants.OPERATION_FAILED_DESCRIPTION, ex.getLocalizedMessage()), HttpStatus.FORBIDDEN);
     }
 
 }
