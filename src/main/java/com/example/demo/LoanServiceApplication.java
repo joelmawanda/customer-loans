@@ -112,6 +112,7 @@ public class LoanServiceApplication implements CommandLineRunner {
 		UserInfo user = new UserInfo();
 		user.setName("admin");
 		user.setPassword(passwordEncoder.encode("admin"));
+		user.setRoles("ADMIN");
 		userInfoRepository.save(user);
 
 		log.info("[Inside the CommandLineRunner method]: persisting customer data to the database");
