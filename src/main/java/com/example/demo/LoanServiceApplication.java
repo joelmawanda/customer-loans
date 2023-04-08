@@ -9,6 +9,8 @@ import com.example.demo.repositories.CustomerRepository;
 import com.example.demo.repositories.LoanRepository;
 import com.example.demo.repositories.UserInfoRepository;
 import com.example.demo.services.JwtService;
+import io.swagger.v3.oas.annotations.OpenAPIDefinition;
+import io.swagger.v3.oas.annotations.info.Info;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -34,12 +36,12 @@ import java.util.Optional;
 import java.util.Random;
 
 @SpringBootApplication(exclude = {SecurityAutoConfiguration.class})
+@OpenAPIDefinition(info = @Info(title = "Customer Products API", version = "1.0", description = "This API returns a customer's loans by account number"))
 @Slf4j
 public class LoanServiceApplication implements CommandLineRunner {
 
 	private static  final String DEFAULT_ADMIN_USERNAME = "admin";
 	private static  final String DEFAULT_ADMIN_PASSWORD = "admin";
-	private static  final String DEFAULT_ADMIN_ROLES = "ADMIN";
 
 	public static void main(String[] args) {
 		SpringApplication.run(LoanServiceApplication.class, args);
@@ -77,7 +79,6 @@ public class LoanServiceApplication implements CommandLineRunner {
 			UserInfo newUser = new UserInfo();
 			newUser.setName(DEFAULT_ADMIN_USERNAME);
 			newUser.setPassword(passwordEncoder.encode(DEFAULT_ADMIN_PASSWORD));
-			newUser.setRoles(DEFAULT_ADMIN_ROLES);
 			userInfoRepository.save(newUser);
 			log.info("New user created: " + newUser);
 		}
@@ -127,6 +128,8 @@ public class LoanServiceApplication implements CommandLineRunner {
 
 		HttpHeaders headers = new HttpHeaders();
 		headers.set("Authorization", "Bearer " + token);
+//		headers.set("Content-Type", MediaType.APPLICATION_JSON_VALUE);
+//		headers.set("Accept", MediaType.APPLICATION_JSON_VALUE);
 
 		RestTemplate restTemplate = new RestTemplate();
 
@@ -142,6 +145,7 @@ public class LoanServiceApplication implements CommandLineRunner {
 			FileWriter writer = new FileWriter("response.txt", true);
 			for (int accountNumber : accountNumbers) {
 				String url = endpointUrl + "?accountNumber=" + accountNumber;
+//				String url = "http://localhost:8080/api/v1/loans/status?accountNumber=1599147058";
 				ResponseEntity<String> response;
 				try {
 					response = restTemplate.exchange(url, HttpMethod.GET, new HttpEntity<>(headers), String.class);

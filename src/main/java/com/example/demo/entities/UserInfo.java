@@ -21,6 +21,6 @@ public class UserInfo {
     @Column(name = "password", nullable = false)
     private String password;
 
-    @Column(name = "roles", nullable = false)
-    private String roles;
+//    @Column(name = "roles", nullable = false)
+//    private String roles;
 }

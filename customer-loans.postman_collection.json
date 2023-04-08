@@ -11,7 +11,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/api/v1/loan-status?accountNumber=1107809807",
+					"raw": "http://localhost:8080/api/v1/loans/status?accountNumber=1557461259",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -20,13 +20,69 @@
 					"path": [
 						"api",
 						"v1",
-						"loan-status"
+						"loans",
+						"status"
 					],
 					"query": [
 						{
 							"key": "accountNumber",
-							"value": "1107809807"
+							"value": "1557461259"
 						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "server-requests-metrics",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/admin/metrics/http.server.requests",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"admin",
+						"metrics",
+						"http.server.requests"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "user-authentication",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"admin\",\r\n    \"password\": \"admin\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/loans/authenticate",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"loans",
+						"authenticate"
 					]
 				}
 			},
@@ -34,16 +90,11 @@
 		}
 	],
 	"auth": {
-		"type": "basic",
-		"basic": [
+		"type": "bearer",
+		"bearer": [
 			{
-				"key": "password",
-				"value": "admin",
-				"type": "string"
-			},
-			{
-				"key": "username",
-				"value": "admin",
+				"key": "token",
+				"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTY4MDg3MDQwMywiZXhwIjoxNjgxNTE4NDAzfQ.M5ANXwlIqfzyKe123CBA8sHodaP0U8HxIeqIzVcuNyY",
 				"type": "string"
 			}
 		]
