@@ -1,0 +1,28 @@
+version: "3.9"
+services:
+    postgresdb:
+        container_name: postgresdb
+        image: postgres:latest
+        volumes:
+            - ./volume/postgres-data:/var/lib/postgresql/data
+        environment:
+            - POSTGRES_USER=postgres
+            - POSTGRES_PASSWORD=test
+            - POSTGRES_DB=customer_loans
+    customer-loans:
+        container_name: customer-loans
+        image: customer-loans:1.0.o
+        build: ./
+        environment:
+            - SERVER_PORT=8080
+            - PROFILE=dev
+            - DB_USER=postgres
+            - DB_PASS=test
+            - DB_MAX_CONN=5
+            - DB_URL=jdbc:postgresql://postgresdb:5432/customer_loans
+        ports:
+            - "8080:8080"
+        volumes:
+            - ./volume/application-logs:/app/logs
+        depends_on:
+            - postgresdb
