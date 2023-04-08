@@ -26,3 +26,6 @@ services:
             - ./volume/application-logs:/app/logs
         depends_on:
             - postgresdb
+networks:
+    default:
+        name: customers-app-net
