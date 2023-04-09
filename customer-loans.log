@@ -17044,3 +17044,4 @@ Caused by: org.springframework.web.client.HttpClientErrorException$Forbidden: 40
 2023-04-09T15:59:42.925+03:00  INFO 28184 --- [http-nio-8080-exec-6] com.example.demo.services.LoanService    : [Inside the getLoanStatus method]: Retrieving customer loans for account number 1880838927 from the database
 2023-04-09T15:59:47.376+03:00  INFO 28184 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getLoanStatus method]: Retrieving customer loans for account number 1414722146 from the database
 2023-04-09T16:02:46.043+03:00  INFO 28184 --- [http-nio-8080-exec-6] com.example.demo.services.LoanService    : [Inside the getLoanStatus method]: Retrieving customer loans for account number 1414722146 from the database
+2023-04-09T16:03:00.374+03:00  INFO 28184 --- [http-nio-8080-exec-1] o.springdoc.api.AbstractOpenApiResource  : Init duration for springdoc-openapi is: 49 ms

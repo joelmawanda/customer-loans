@@ -7,7 +7,7 @@
 	},
 	"item": [
 		{
-			"name": "get-a-customer's-loans",
+			"name": "get-a-customer's-loans-status",
 			"request": {
 				"method": "GET",
 				"header": [],
