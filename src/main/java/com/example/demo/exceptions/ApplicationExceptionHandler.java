@@ -18,7 +18,7 @@ public class ApplicationExceptionHandler {
 
     @ExceptionHandler(NoLoanFoundException.class)
     public ResponseEntity<OperationResponse> handleNoLoanFoundException(NoLoanFoundException ex){
-        return new ResponseEntity<>(new OperationResponse(Constants.OPERATION_SUCCESS_CODE, Constants.OPERATION_SUCCESS_DESCRIPTION, ex.getLocalizedMessage()), HttpStatus.NOT_FOUND);
+        return new ResponseEntity<>(new OperationResponse(Constants.OPERATION_SUCCESS_CODE, Constants.OPERATION_SUCCESS_DESCRIPTION, ex.getLocalizedMessage()), HttpStatus.OK);
     }
 
     @ExceptionHandler(InvalidAccountNumberException.class)
