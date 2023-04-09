@@ -16594,3 +16594,26 @@ Caused by: org.springframework.web.client.HttpClientErrorException$Forbidden: 40
 2023-04-09T14:12:46.562+03:00  INFO 24464 --- [http-nio-8080-exec-1] com.example.demo.services.LoanService    : [Inside the getLoanStatus method]: Retrieving customer loans for account number 141472214 from the database
 2023-04-09T14:12:52.989+03:00  INFO 24464 --- [http-nio-8080-exec-2] com.example.demo.services.LoanService    : [Inside the getLoanStatus method]: Retrieving customer loans for account number 1 from the database
 2023-04-09T14:13:06.273+03:00  INFO 24464 --- [http-nio-8080-exec-4] com.example.demo.services.LoanService    : [Inside the getLoanStatus method]: Retrieving customer loans for account number 1414722146 from the database
+2023-04-09T14:15:48.625+03:00  INFO 24464 --- [http-nio-8080-exec-1] com.example.demo.services.LoanService    : [Inside the getLoanStatus method]: Retrieving customer loans for account number 1414722146 from the database
+2023-04-09T14:16:52.033+03:00  INFO 24464 --- [http-nio-8080-exec-4] com.example.demo.services.LoanService    : [Inside the getLoanStatus method]: Retrieving customer loans for account number 1147878895 from the database
+2023-04-09T14:18:40.339+03:00  INFO 24464 --- [http-nio-8080-exec-8] com.example.demo.services.LoanService    : [Inside the getLoanStatus method]: Retrieving customer loans for account number 1147878895 from the database
+2023-04-09T14:18:44.481+03:00  INFO 24464 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getLoanStatus method]: Retrieving customer loans for account number 1414722146 from the database
+2023-04-09T14:22:40.600+03:00  INFO 6080 --- [main] c.example.demo.LoanServiceApplication    : Starting LoanServiceApplication using Java 17.0.4 with PID 6080 (C:\MY_PROJECTS\customer-loans\target\classes started by C849152 in C:\MY_PROJECTS\customer-loans)
+2023-04-09T14:22:40.605+03:00  INFO 6080 --- [main] c.example.demo.LoanServiceApplication    : The following 1 profile is active: "dev"
+2023-04-09T14:22:42.890+03:00  INFO 6080 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-04-09T14:22:43.041+03:00  INFO 6080 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 134 ms. Found 3 JPA repository interfaces.
+2023-04-09T14:22:44.374+03:00  INFO 6080 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-04-09T14:22:44.388+03:00  INFO 6080 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-04-09T14:22:44.389+03:00  INFO 6080 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.7]
+2023-04-09T14:22:44.626+03:00  INFO 6080 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-04-09T14:22:44.627+03:00  INFO 6080 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3876 ms
+2023-04-09T14:22:45.049+03:00  INFO 6080 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-04-09T14:22:45.150+03:00  INFO 6080 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.1.7.Final
+2023-04-09T14:22:45.801+03:00  INFO 6080 --- [main] com.zaxxer.hikari.HikariDataSource       : customer-loans-conn-pool - Starting...
+2023-04-09T14:22:46.225+03:00  INFO 6080 --- [main] com.zaxxer.hikari.pool.HikariPool        : customer-loans-conn-pool - Added connection org.postgresql.jdbc.PgConnection@c6a692e
+2023-04-09T14:22:46.228+03:00  INFO 6080 --- [main] com.zaxxer.hikari.HikariDataSource       : customer-loans-conn-pool - Start completed.
+2023-04-09T14:22:46.643+03:00  INFO 6080 --- [main] SQL dialect                              : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2023-04-09T14:22:48.726+03:00  INFO 6080 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-04-09T14:22:48.738+03:00  INFO 6080 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-04-09T14:22:49.839+03:00  WARN 6080 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-04-09T14:22:50.594+03:00  INFO 6080 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 14 endpoint(s) beneath base path '/admin'
