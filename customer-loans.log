@@ -16820,3 +16820,4 @@ Caused by: org.springframework.web.client.HttpClientErrorException$Forbidden: 40
 2023-04-09T14:44:48.955+03:00  INFO 27924 --- [http-nio-8080-exec-5] com.example.demo.services.LoanService    : [Inside the getLoanStatus method]: Retrieving customer loans for account number 1167519627 from the database
 2023-04-09T14:45:04.144+03:00  INFO 27924 --- [http-nio-8080-exec-8] o.springdoc.api.AbstractOpenApiResource  : Init duration for springdoc-openapi is: 215 ms
 2023-04-09T14:45:12.896+03:00  INFO 27924 --- [http-nio-8080-exec-2] com.example.demo.services.LoanService    : [Inside the getLoanStatus method]: Retrieving customer loans for account number 1414722146 from the database
+2023-04-09T14:47:34.101+03:00  INFO 27924 --- [http-nio-8080-exec-3] o.springdoc.api.AbstractOpenApiResource  : Init duration for springdoc-openapi is: 62 ms
