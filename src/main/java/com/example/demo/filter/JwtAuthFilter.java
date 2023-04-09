@@ -1,5 +1,5 @@
 package com.example.demo.filter;
-import com.example.demo.configuration.UserInfoUserDetailsService;
+import com.example.demo.security.UserInfoUserDetailsService;
 import com.example.demo.services.JwtService;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;

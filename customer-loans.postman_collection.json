@@ -12,7 +12,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/api/v1/loans/status?accountNumber=1599147058",
+					"raw": "http://localhost:8080/api/v1/loans/status?accountNumber=1414722146",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -27,7 +27,7 @@
 					"query": [
 						{
 							"key": "accountNumber",
-							"value": "1599147058"
+							"value": "1414722146"
 						}
 					]
 				},
@@ -131,37 +131,6 @@
 					"path": [
 						"customer-docs",
 						"ui"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "get-all-customer-loans",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:8080/api/v1/customers?size=10&page_index=0",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"api",
-						"v1",
-						"customers"
-					],
-					"query": [
-						{
-							"key": "size",
-							"value": "10"
-						},
-						{
-							"key": "page_index",
-							"value": "0"
-						}
 					]
 				}
 			},

@@ -32,7 +32,7 @@ public class LoanController {
     private AuthenticationManager authenticationManager;
 
     @GetMapping("/loans/status")
-    public ResponseEntity<?> getLoanStatus(@RequestParam("accountNumber") int accountNumber) {
+    public ResponseEntity<?> getLoanStatus(@RequestHeader() @RequestParam("accountNumber") int accountNumber) {
         LoanStatus loans = loanService.getLoanStatus(accountNumber);
         return new ResponseEntity<>(new OperationResponse(Constants.OPERATION_SUCCESS_CODE, Constants.OPERATION_SUCCESS_DESCRIPTION, "These are the customer's loans", loans), HttpStatus.OK);
     }
@@ -42,11 +42,6 @@ public class LoanController {
         Authentication authentication = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(authRequest.getUsername(), authRequest.getPassword()));
         String token = jwtService.generateToken(authRequest.getUsername());
         return new ResponseEntity<>(new OperationResponse(Constants.OPERATION_SUCCESS_CODE, Constants.OPERATION_SUCCESS_DESCRIPTION, "Authenticated Successfully", token), HttpStatus.OK);
-    }
-
-    @GetMapping("/customers")
-    public ResponseEntity<?> findAll(Pageable page, @RequestParam(name = "direction", defaultValue = "asc") String direction) {
-        return new ResponseEntity<>(loanService.findAll(page, direction), HttpStatus.OK);
     }
 }
 

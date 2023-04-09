@@ -16464,3 +16464,47 @@ Caused by: org.springframework.web.client.HttpClientErrorException$Forbidden: 40
 2023-04-09T13:39:25.700+03:00  INFO 11892 --- [http-nio-8080-exec-10] com.example.demo.services.LoanService    : system found 2 element(s)
 2023-04-09T13:39:36.951+03:00  INFO 11892 --- [http-nio-8080-exec-2] com.example.demo.services.LoanService    : [Inside the getLoanStatus method]: Retrieving customer loans for account number 1599147058 from the database
 2023-04-09T13:39:49.878+03:00  INFO 11892 --- [http-nio-8080-exec-3] o.springdoc.api.AbstractOpenApiResource  : Init duration for springdoc-openapi is: 510 ms
+2023-04-09T13:40:06.888+03:00  INFO 11892 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : >>> Page request [number: 0, size 10, sort: UNSORTED]
+2023-04-09T13:40:06.889+03:00  INFO 11892 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : >>> sorting by direction: asc
+2023-04-09T13:40:06.906+03:00  INFO 11892 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : system found 2 element(s)
+2023-04-09T13:42:08.903+03:00  INFO 11892 --- [http-nio-8080-exec-7] o.springdoc.api.AbstractOpenApiResource  : Init duration for springdoc-openapi is: 144 ms
+2023-04-09T13:59:54.877+03:00  INFO 27936 --- [main] c.example.demo.LoanServiceApplication    : Starting LoanServiceApplication using Java 17.0.4 with PID 27936 (C:\MY_PROJECTS\customer-loans\target\classes started by C849152 in C:\MY_PROJECTS\customer-loans)
+2023-04-09T13:59:54.883+03:00  INFO 27936 --- [main] c.example.demo.LoanServiceApplication    : The following 1 profile is active: "dev"
+2023-04-09T14:00:16.522+03:00  INFO 8144 --- [main] c.example.demo.LoanServiceApplication    : Starting LoanServiceApplication using Java 17.0.4 with PID 8144 (C:\MY_PROJECTS\customer-loans\target\classes started by C849152 in C:\MY_PROJECTS\customer-loans)
+2023-04-09T14:00:16.528+03:00  INFO 8144 --- [main] c.example.demo.LoanServiceApplication    : The following 1 profile is active: "dev"
+2023-04-09T14:00:18.797+03:00  INFO 8144 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-04-09T14:00:18.946+03:00  INFO 8144 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 133 ms. Found 3 JPA repository interfaces.
+2023-04-09T14:00:20.288+03:00  INFO 8144 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-04-09T14:00:20.310+03:00  INFO 8144 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-04-09T14:00:20.311+03:00  INFO 8144 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.7]
+2023-04-09T14:00:20.550+03:00  INFO 8144 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-04-09T14:00:20.551+03:00  INFO 8144 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3886 ms
+2023-04-09T14:00:21.028+03:00  INFO 8144 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-04-09T14:00:21.136+03:00  INFO 8144 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.1.7.Final
+2023-04-09T14:00:21.793+03:00  INFO 8144 --- [main] com.zaxxer.hikari.HikariDataSource       : customer-loans-conn-pool - Starting...
+2023-04-09T14:00:22.155+03:00  INFO 8144 --- [main] com.zaxxer.hikari.pool.HikariPool        : customer-loans-conn-pool - Added connection org.postgresql.jdbc.PgConnection@c6a692e
+2023-04-09T14:00:22.159+03:00  INFO 8144 --- [main] com.zaxxer.hikari.HikariDataSource       : customer-loans-conn-pool - Start completed.
+2023-04-09T14:00:22.601+03:00  INFO 8144 --- [main] SQL dialect                              : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2023-04-09T14:00:24.482+03:00  INFO 8144 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-04-09T14:00:24.506+03:00  INFO 8144 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-04-09T14:00:25.604+03:00  WARN 8144 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-04-09T14:00:26.293+03:00  INFO 8144 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 14 endpoint(s) beneath base path '/admin'
+2023-04-09T14:00:26.382+03:00  INFO 8144 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@3705a85c, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2284058a, org.springframework.security.web.context.SecurityContextHolderFilter@1a1c308b, org.springframework.security.web.header.HeaderWriterFilter@294b045b, org.springframework.web.filter.CorsFilter@5b11d0d8, org.springframework.security.web.authentication.logout.LogoutFilter@7866ffa, com.example.demo.filter.JwtAuthFilter@3cd28235, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7af2ee23, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2b69ff13, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5cf39df6, org.springframework.security.web.session.SessionManagementFilter@2db75e32, org.springframework.security.web.access.ExceptionTranslationFilter@62cf873a, org.springframework.security.web.access.intercept.AuthorizationFilter@52a8f789]
+2023-04-09T14:00:27.025+03:00  INFO 8144 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-04-09T14:00:27.054+03:00  INFO 8144 --- [main] c.example.demo.LoanServiceApplication    : Started LoanServiceApplication in 11.498 seconds (process running for 12.469)
+2023-04-09T14:00:27.122+03:00  INFO 8144 --- [main] c.example.demo.LoanServiceApplication    : Searching for user with name: admin
+2023-04-09T14:00:27.449+03:00  INFO 8144 --- [main] c.example.demo.LoanServiceApplication    : User not found, creating new user with default values
+2023-04-09T14:00:27.652+03:00  INFO 8144 --- [main] c.example.demo.LoanServiceApplication    : New user created: UserInfo(id=1, name=admin, password=$2a$10$UBzKbPoa4P/oFbzNDYwi7eiua/IxuwQXljryixlpR5QkErdCzN/zm)
+2023-04-09T14:00:27.653+03:00  INFO 8144 --- [main] c.example.demo.LoanServiceApplication    : [Inside the CommandLineRunner method]: persisting customer data to the database
+2023-04-09T14:00:28.163+03:00  INFO 8144 --- [main] c.example.demo.LoanServiceApplication    : The generated token is: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTY4MTAzODAyOCwiZXhwIjoxNjgxNjg2MDI4fQ.WnrjHWvXinsl86rNYU6kncQTdfkrrsdSWI0_N8a6LyU
+2023-04-09T14:00:28.164+03:00  INFO 8144 --- [main] c.example.demo.LoanServiceApplication    : [Inside the CommandLineRunner method]: calling the RestTemplate class which invokes the api
+2023-04-09T14:00:28.334+03:00  INFO 8144 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-04-09T14:00:28.335+03:00  INFO 8144 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-04-09T14:00:28.338+03:00  INFO 8144 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2023-04-09T14:00:28.521+03:00  INFO 8144 --- [http-nio-8080-exec-1] com.example.demo.services.LoanService    : [Inside the getLoanStatus method]: Retrieving customer loans for account number 1810596440 from the database
+2023-04-09T14:00:28.617+03:00  INFO 8144 --- [http-nio-8080-exec-2] com.example.demo.services.LoanService    : [Inside the getLoanStatus method]: Retrieving customer loans for account number 1412697516 from the database
+2023-04-09T14:00:28.651+03:00  INFO 8144 --- [http-nio-8080-exec-3] com.example.demo.services.LoanService    : [Inside the getLoanStatus method]: Retrieving customer loans for account number 1754103039 from the database
+2023-04-09T14:00:28.681+03:00  INFO 8144 --- [http-nio-8080-exec-4] com.example.demo.services.LoanService    : [Inside the getLoanStatus method]: Retrieving customer loans for account number 1226630049 from the database
+2023-04-09T14:00:28.709+03:00  INFO 8144 --- [http-nio-8080-exec-5] com.example.demo.services.LoanService    : [Inside the getLoanStatus method]: Retrieving customer loans for account number 1880637763 from the database
+2023-04-09T14:00:45.702+03:00  INFO 8144 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getLoanStatus method]: Retrieving customer loans for account number 1599147058 from the database
+2023-04-09T14:01:11.419+03:00  INFO 8144 --- [http-nio-8080-exec-8] com.example.demo.services.LoanService    : [Inside the getLoanStatus method]: Retrieving customer loans for account number 1414722146 from the database

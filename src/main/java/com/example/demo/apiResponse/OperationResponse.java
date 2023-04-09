@@ -28,9 +28,6 @@ import java.util.List;
         "operation_result",
         "operation_description",
         "message",
-        "page_index",
-        "records_displayed",
-        "total_pages",
         "data"})
 public class OperationResponse {
 
@@ -49,15 +46,6 @@ public class OperationResponse {
     @JsonProperty("data")
     private Object data;
 
-    @JsonProperty("page_index")
-    private Integer pageIndex;
-
-    @JsonProperty("records_displayed")
-    private Integer recordsDisplayed;
-
-    @JsonProperty("total_pages")
-    private Integer totalPages;
-
     public OperationResponse(int operationResult, String operationDescription, String message) {
         this.operationResult = operationResult;
         this.operationDescription = operationDescription;
@@ -70,16 +58,4 @@ public class OperationResponse {
         this.message = message;
         this.data = data;
     }
-
-    public OperationResponse(int operationResult, String operationDescription, String message, Object data, Integer pageIndex, Integer recordsDisplayed, Integer totalPages) {
-        this.operationResult = operationResult;
-        this.operationDescription = operationDescription;
-        this.message = message;
-        this.data = data;
-        this.pageIndex = pageIndex;
-        this.recordsDisplayed = recordsDisplayed;
-        this.totalPages = totalPages;
-    }
-
-
 }

@@ -1,4 +1,4 @@
-package com.example.demo.configuration;
+package com.example.demo.security;
 
 import com.example.demo.entities.UserInfo;
 import com.example.demo.repositories.UserInfoRepository;

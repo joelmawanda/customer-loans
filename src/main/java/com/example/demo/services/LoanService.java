@@ -44,38 +44,5 @@ public class LoanService {
         }
         return new LoanStatus(loans);
     }
-
-    public OperationResponse findAll(Pageable pageable, String direction) {
-        log.info(">>> " + pageable);
-        log.info(">>> sorting by direction: " + direction);
-
-        Page<Customer> page = customerRepository.findAll(
-                PageRequest.of(pageable.getPageNumber(),
-                        pageable.getPageSize()
-                ));
-
-        log.info("system found " + page.getTotalElements() + " element(s)");
-
-        OperationResponse operationResponse;
-        List<Customer> list = page.getContent();
-
-        if (page.getContent().size() <= 0) {
-            operationResponse = new OperationResponse(
-                    Constants.OPERATION_SUCCESS_CODE,
-                    Constants.OPERATION_SUCCESS_DESCRIPTION,
-                    "No Records Found",
-                    list, 0, 0, 0);
-        } else {
-            operationResponse = new OperationResponse(
-                    Constants.OPERATION_SUCCESS_CODE,
-                    Constants.OPERATION_SUCCESS_DESCRIPTION,
-                    page.getTotalElements() + " Record(s) found.",
-                    list,
-                    page.getNumber(),
-                    page.getNumberOfElements(),
-                    page.getTotalPages());
-        }
-        return operationResponse;
-    }
 }
 
