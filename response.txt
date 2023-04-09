@@ -38,3 +38,8 @@
 {"timestamp":"2023-04-09T04:55:47.257+00:00","status":404,"error":"Not Found","path":"/api/v1/loan-status"}
 {"timestamp":"2023-04-09T04:55:47.278+00:00","status":404,"error":"Not Found","path":"/api/v1/loan-status"}
 {"timestamp":"2023-04-09T04:55:47.297+00:00","status":404,"error":"Not Found","path":"/api/v1/loan-status"}
+{"timestamp":"2023-04-09T05:26:26.403+00:00","status":404,"error":"Not Found","path":"/api/v1/loan-status"}
+{"timestamp":"2023-04-09T05:26:26.441+00:00","status":404,"error":"Not Found","path":"/api/v1/loan-status"}
+{"timestamp":"2023-04-09T05:26:26.462+00:00","status":404,"error":"Not Found","path":"/api/v1/loan-status"}
+{"timestamp":"2023-04-09T05:26:26.485+00:00","status":404,"error":"Not Found","path":"/api/v1/loan-status"}
+{"timestamp":"2023-04-09T05:26:26.507+00:00","status":404,"error":"Not Found","path":"/api/v1/loan-status"}
