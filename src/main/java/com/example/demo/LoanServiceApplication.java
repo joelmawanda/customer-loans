@@ -124,12 +124,10 @@ public class LoanServiceApplication implements CommandLineRunner {
 
 		log.info("[Inside the CommandLineRunner method]: calling the RestTemplate class which invokes the api");
 
-		String endpointUrl = "http://localhost:8080/api/v1/loan-status";
+		String endpointUrl = "http://localhost:8080/api/v1/loans/status";
 
 		HttpHeaders headers = new HttpHeaders();
 		headers.set("Authorization", "Bearer " + token);
-//		headers.set("Content-Type", MediaType.APPLICATION_JSON_VALUE);
-//		headers.set("Accept", MediaType.APPLICATION_JSON_VALUE);
 
 		RestTemplate restTemplate = new RestTemplate();
 
@@ -145,10 +143,12 @@ public class LoanServiceApplication implements CommandLineRunner {
 			FileWriter writer = new FileWriter("response.txt", true);
 			for (int accountNumber : accountNumbers) {
 				String url = endpointUrl + "?accountNumber=" + accountNumber;
-//				String url = "http://localhost:8080/api/v1/loans/status?accountNumber=1599147058";
+
 				ResponseEntity<String> response;
+
 				try {
 					response = restTemplate.exchange(url, HttpMethod.GET, new HttpEntity<>(headers), String.class);
+
 					if (response.getStatusCode() == HttpStatus.OK) {
 						writer.write(response.getBody());
 						writer.write("\n");

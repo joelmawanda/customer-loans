@@ -43,3 +43,18 @@
 {"timestamp":"2023-04-09T05:26:26.462+00:00","status":404,"error":"Not Found","path":"/api/v1/loan-status"}
 {"timestamp":"2023-04-09T05:26:26.485+00:00","status":404,"error":"Not Found","path":"/api/v1/loan-status"}
 {"timestamp":"2023-04-09T05:26:26.507+00:00","status":404,"error":"Not Found","path":"/api/v1/loan-status"}
+{"timestamp":"09-04-2023 12:53:59","operation_result":1,"operation_description":"Failed","message":"Invalid account number"}
+{"timestamp":"09-04-2023 12:53:59","operation_result":1,"operation_description":"Failed","message":"Invalid account number"}
+{"timestamp":"09-04-2023 12:53:59","operation_result":1,"operation_description":"Failed","message":"Invalid account number"}
+{"timestamp":"09-04-2023 12:53:59","operation_result":1,"operation_description":"Failed","message":"Invalid account number"}
+{"timestamp":"09-04-2023 12:53:59","operation_result":1,"operation_description":"Failed","message":"Invalid account number"}
+{"timestamp":"09-04-2023 13:01:20","operation_result":1,"operation_description":"Failed","message":"Invalid account number"}
+{"timestamp":"09-04-2023 13:01:20","operation_result":1,"operation_description":"Failed","message":"Invalid account number"}
+{"timestamp":"09-04-2023 13:01:20","operation_result":1,"operation_description":"Failed","message":"Invalid account number"}
+{"timestamp":"09-04-2023 13:01:20","operation_result":1,"operation_description":"Failed","message":"Invalid account number"}
+{"timestamp":"09-04-2023 13:01:20","operation_result":1,"operation_description":"Failed","message":"Invalid account number"}
+{"timestamp":"09-04-2023 13:02:24","operation_result":1,"operation_description":"Failed","message":"Invalid account number"}
+{"timestamp":"09-04-2023 13:02:24","operation_result":1,"operation_description":"Failed","message":"Invalid account number"}
+{"timestamp":"09-04-2023 13:02:24","operation_result":1,"operation_description":"Failed","message":"Invalid account number"}
+{"timestamp":"09-04-2023 13:02:24","operation_result":1,"operation_description":"Failed","message":"Invalid account number"}
+{"timestamp":"09-04-2023 13:02:24","operation_result":1,"operation_description":"Failed","message":"Invalid account number"}
