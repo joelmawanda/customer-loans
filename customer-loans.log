@@ -1292,3 +1292,152 @@ java.lang.StringIndexOutOfBoundsException: begin 11, end 10, length 10
 2023-04-09T08:40:12.384+03:00  INFO 23352 --- [main] c.example.demo.LoanServiceApplication    : API call failed with error: 403 : [no body]
 2023-04-09T08:40:12.431+03:00  INFO 23352 --- [main] c.example.demo.LoanServiceApplication    : API call failed with error: 403 : [no body]
 2023-04-09T08:40:12.490+03:00  INFO 23352 --- [main] c.example.demo.LoanServiceApplication    : API call failed with error: 403 : [no body]
+2023-04-09T08:40:44.318+03:00  INFO 23352 --- [http-nio-8080-exec-8] o.springdoc.api.AbstractOpenApiResource  : Init duration for springdoc-openapi is: 644 ms
+2023-04-09T08:41:32.866+03:00  INFO 22608 --- [main] c.example.demo.LoanServiceApplication    : Starting LoanServiceApplication using Java 17.0.4 with PID 22608 (C:\MY_PROJECTS\customer-loans\target\classes started by C849152 in C:\MY_PROJECTS\customer-loans)
+2023-04-09T08:41:32.870+03:00  INFO 22608 --- [main] c.example.demo.LoanServiceApplication    : The following 1 profile is active: "dev"
+2023-04-09T08:41:34.263+03:00  INFO 22608 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-04-09T08:41:34.352+03:00  INFO 22608 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 76 ms. Found 3 JPA repository interfaces.
+2023-04-09T08:41:35.162+03:00  INFO 22608 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-04-09T08:41:35.171+03:00  INFO 22608 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-04-09T08:41:35.172+03:00  INFO 22608 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.7]
+2023-04-09T08:41:35.303+03:00  INFO 22608 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-04-09T08:41:35.303+03:00  INFO 22608 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2354 ms
+2023-04-09T08:41:35.572+03:00  INFO 22608 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-04-09T08:41:35.647+03:00  INFO 22608 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.1.7.Final
+2023-04-09T08:41:36.005+03:00  INFO 22608 --- [main] com.zaxxer.hikari.HikariDataSource       : customer-loans-conn-pool - Starting...
+2023-04-09T08:41:36.258+03:00  INFO 22608 --- [main] com.zaxxer.hikari.pool.HikariPool        : customer-loans-conn-pool - Added connection org.postgresql.jdbc.PgConnection@2e204155
+2023-04-09T08:41:36.260+03:00  INFO 22608 --- [main] com.zaxxer.hikari.HikariDataSource       : customer-loans-conn-pool - Start completed.
+2023-04-09T08:41:36.506+03:00  INFO 22608 --- [main] SQL dialect                              : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2023-04-09T08:41:37.601+03:00  INFO 22608 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-04-09T08:41:37.614+03:00  INFO 22608 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-04-09T08:41:38.492+03:00  INFO 22608 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 14 endpoint(s) beneath base path '/admin'
+2023-04-09T08:41:38.540+03:00  WARN 22608 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-04-09T08:41:38.819+03:00  INFO 22608 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@25134e01, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@12d28106, org.springframework.security.web.context.SecurityContextHolderFilter@723081a2, org.springframework.security.web.header.HeaderWriterFilter@793248d, org.springframework.web.filter.CorsFilter@6a3c1b56, org.springframework.security.web.authentication.logout.LogoutFilter@d408c5d, com.example.demo.filter.JwtAuthFilter@15a41088, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@41ae9f11, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@356cb230, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3b8ce72, org.springframework.security.web.session.SessionManagementFilter@538d2308, org.springframework.security.web.access.ExceptionTranslationFilter@55589ef5, org.springframework.security.web.access.intercept.AuthorizationFilter@649a6d88]
+2023-04-09T08:41:39.224+03:00  INFO 22608 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-04-09T08:41:39.241+03:00  INFO 22608 --- [main] c.example.demo.LoanServiceApplication    : Started LoanServiceApplication in 6.931 seconds (process running for 7.474)
+2023-04-09T08:41:39.289+03:00  INFO 22608 --- [main] c.example.demo.LoanServiceApplication    : Searching for user with name: admin
+2023-04-09T08:41:39.494+03:00  INFO 22608 --- [main] c.example.demo.LoanServiceApplication    : User not found, creating new user with default values
+2023-04-09T08:41:39.645+03:00  INFO 22608 --- [main] c.example.demo.LoanServiceApplication    : New user created: UserInfo(id=1, name=admin, password=$2a$10$wTjN0rvevcQGoV6zO9imG.MPL4JxyXlVLOEFTSihkCzYRrvK6xaBi)
+2023-04-09T08:41:39.645+03:00  INFO 22608 --- [main] c.example.demo.LoanServiceApplication    : [Inside the CommandLineRunner method]: persisting customer data to the database
+2023-04-09T08:41:40.021+03:00  INFO 22608 --- [main] c.example.demo.LoanServiceApplication    : The generated token is: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTY4MTAxODg5OSwiZXhwIjoxNjgxNjY2ODk5fQ.KfzMNSILYZbTt6MvDCrcUcuOVafYZ9pE6LlvV8scx1c
+2023-04-09T08:41:40.021+03:00  INFO 22608 --- [main] c.example.demo.LoanServiceApplication    : [Inside the CommandLineRunner method]: calling the RestTemplate class which invokes the api
+2023-04-09T08:41:40.119+03:00  INFO 22608 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-04-09T08:41:40.119+03:00  INFO 22608 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-04-09T08:41:40.120+03:00  INFO 22608 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2023-04-09T08:41:40.244+03:00  INFO 22608 --- [main] c.example.demo.LoanServiceApplication    : API call failed with error: 403 : [no body]
+2023-04-09T08:41:40.264+03:00  INFO 22608 --- [main] c.example.demo.LoanServiceApplication    : API call failed with error: 403 : [no body]
+2023-04-09T08:41:40.282+03:00  INFO 22608 --- [main] c.example.demo.LoanServiceApplication    : API call failed with error: 403 : [no body]
+2023-04-09T08:41:40.299+03:00  INFO 22608 --- [main] c.example.demo.LoanServiceApplication    : API call failed with error: 403 : [no body]
+2023-04-09T08:41:40.318+03:00  INFO 22608 --- [main] c.example.demo.LoanServiceApplication    : API call failed with error: 403 : [no body]
+2023-04-09T08:42:05.196+03:00  INFO 22608 --- [http-nio-8080-exec-6] o.springdoc.api.AbstractOpenApiResource  : Init duration for springdoc-openapi is: 657 ms
+2023-04-09T08:42:42.038+03:00  INFO 7776 --- [main] c.example.demo.LoanServiceApplication    : Starting LoanServiceApplication using Java 17.0.4 with PID 7776 (C:\MY_PROJECTS\customer-loans\target\classes started by C849152 in C:\MY_PROJECTS\customer-loans)
+2023-04-09T08:42:42.040+03:00  INFO 7776 --- [main] c.example.demo.LoanServiceApplication    : The following 1 profile is active: "dev"
+2023-04-09T08:42:43.477+03:00  INFO 7776 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-04-09T08:42:43.572+03:00  INFO 7776 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 84 ms. Found 3 JPA repository interfaces.
+2023-04-09T08:42:44.413+03:00  INFO 7776 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-04-09T08:42:44.424+03:00  INFO 7776 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-04-09T08:42:44.424+03:00  INFO 7776 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.7]
+2023-04-09T08:42:44.584+03:00  INFO 7776 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-04-09T08:42:44.585+03:00  INFO 7776 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2461 ms
+2023-04-09T08:42:44.882+03:00  INFO 7776 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-04-09T08:42:44.960+03:00  INFO 7776 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.1.7.Final
+2023-04-09T08:42:45.337+03:00  INFO 7776 --- [main] com.zaxxer.hikari.HikariDataSource       : customer-loans-conn-pool - Starting...
+2023-04-09T08:42:45.574+03:00  INFO 7776 --- [main] com.zaxxer.hikari.pool.HikariPool        : customer-loans-conn-pool - Added connection org.postgresql.jdbc.PgConnection@2e349cf2
+2023-04-09T08:42:45.576+03:00  INFO 7776 --- [main] com.zaxxer.hikari.HikariDataSource       : customer-loans-conn-pool - Start completed.
+2023-04-09T08:42:45.826+03:00  INFO 7776 --- [main] SQL dialect                              : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2023-04-09T08:42:46.850+03:00  INFO 7776 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-04-09T08:42:46.863+03:00  INFO 7776 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-04-09T08:42:47.572+03:00  WARN 7776 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-04-09T08:42:48.078+03:00  INFO 7776 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 14 endpoint(s) beneath base path '/admin'
+2023-04-09T08:42:48.126+03:00  INFO 7776 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@45a40353, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@33efa7d4, org.springframework.security.web.context.SecurityContextHolderFilter@19b33b0d, org.springframework.security.web.header.HeaderWriterFilter@3705a85c, org.springframework.web.filter.CorsFilter@fe337, org.springframework.security.web.authentication.logout.LogoutFilter@55589ef5, com.example.demo.filter.JwtAuthFilter@75c3584e, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2da8ed80, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@6df4d8f1, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@356cb230, org.springframework.security.web.session.SessionManagementFilter@2cdcedef, org.springframework.security.web.access.ExceptionTranslationFilter@5345552f, org.springframework.security.web.access.intercept.AuthorizationFilter@723081a2]
+2023-04-09T08:42:48.517+03:00  INFO 7776 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-04-09T08:42:48.540+03:00  INFO 7776 --- [main] c.example.demo.LoanServiceApplication    : Started LoanServiceApplication in 7.058 seconds (process running for 7.661)
+2023-04-09T08:42:48.596+03:00  INFO 7776 --- [main] c.example.demo.LoanServiceApplication    : Searching for user with name: admin
+2023-04-09T08:42:48.769+03:00  INFO 7776 --- [main] c.example.demo.LoanServiceApplication    : User not found, creating new user with default values
+2023-04-09T08:42:48.931+03:00  INFO 7776 --- [main] c.example.demo.LoanServiceApplication    : New user created: UserInfo(id=1, name=admin, password=$2a$10$5UinVbo2VChu2EliYZ9dX.OR5oqW4kU/gPFA4rZPsVK56yEz3B8d2)
+2023-04-09T08:42:48.931+03:00  INFO 7776 --- [main] c.example.demo.LoanServiceApplication    : [Inside the CommandLineRunner method]: persisting customer data to the database
+2023-04-09T08:42:49.281+03:00  INFO 7776 --- [main] c.example.demo.LoanServiceApplication    : The generated token is: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTY4MTAxODk2OSwiZXhwIjoxNjgxNjY2OTY5fQ.BTAhkhyQCijJsLhFOP3ocJdd62mirXrqpX5BwtLqyUc
+2023-04-09T08:42:49.282+03:00  INFO 7776 --- [main] c.example.demo.LoanServiceApplication    : [Inside the CommandLineRunner method]: calling the RestTemplate class which invokes the api
+2023-04-09T08:42:49.383+03:00  INFO 7776 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-04-09T08:42:49.384+03:00  INFO 7776 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-04-09T08:42:49.385+03:00  INFO 7776 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2023-04-09T08:42:49.504+03:00  INFO 7776 --- [main] c.example.demo.LoanServiceApplication    : API call failed with error: 403 : [no body]
+2023-04-09T08:42:49.523+03:00  INFO 7776 --- [main] c.example.demo.LoanServiceApplication    : API call failed with error: 403 : [no body]
+2023-04-09T08:42:49.545+03:00  INFO 7776 --- [main] c.example.demo.LoanServiceApplication    : API call failed with error: 403 : [no body]
+2023-04-09T08:42:49.565+03:00  INFO 7776 --- [main] c.example.demo.LoanServiceApplication    : API call failed with error: 403 : [no body]
+2023-04-09T08:42:49.584+03:00  INFO 7776 --- [main] c.example.demo.LoanServiceApplication    : API call failed with error: 403 : [no body]
+2023-04-09T08:43:10.923+03:00  INFO 7776 --- [http-nio-8080-exec-1] o.springdoc.api.AbstractOpenApiResource  : Init duration for springdoc-openapi is: 479 ms
+2023-04-09T08:43:39.622+03:00  INFO 25288 --- [main] c.example.demo.LoanServiceApplication    : Starting LoanServiceApplication using Java 17.0.4 with PID 25288 (C:\MY_PROJECTS\customer-loans\target\classes started by C849152 in C:\MY_PROJECTS\customer-loans)
+2023-04-09T08:43:39.624+03:00  INFO 25288 --- [main] c.example.demo.LoanServiceApplication    : The following 1 profile is active: "dev"
+2023-04-09T08:43:40.960+03:00  INFO 25288 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-04-09T08:43:41.054+03:00  INFO 25288 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 80 ms. Found 3 JPA repository interfaces.
+2023-04-09T08:43:41.833+03:00  INFO 25288 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-04-09T08:43:41.842+03:00  INFO 25288 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-04-09T08:43:41.842+03:00  INFO 25288 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.7]
+2023-04-09T08:43:41.980+03:00  INFO 25288 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-04-09T08:43:41.981+03:00  INFO 25288 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2282 ms
+2023-04-09T08:43:42.256+03:00  INFO 25288 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-04-09T08:43:42.333+03:00  INFO 25288 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.1.7.Final
+2023-04-09T08:43:42.739+03:00  INFO 25288 --- [main] com.zaxxer.hikari.HikariDataSource       : customer-loans-conn-pool - Starting...
+2023-04-09T08:43:42.994+03:00  INFO 25288 --- [main] com.zaxxer.hikari.pool.HikariPool        : customer-loans-conn-pool - Added connection org.postgresql.jdbc.PgConnection@68a426c3
+2023-04-09T08:43:42.997+03:00  INFO 25288 --- [main] com.zaxxer.hikari.HikariDataSource       : customer-loans-conn-pool - Start completed.
+2023-04-09T08:43:43.246+03:00  INFO 25288 --- [main] SQL dialect                              : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2023-04-09T08:43:44.283+03:00  INFO 25288 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-04-09T08:43:44.298+03:00  INFO 25288 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-04-09T08:43:44.946+03:00  WARN 25288 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-04-09T08:43:45.424+03:00  INFO 25288 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 14 endpoint(s) beneath base path '/admin'
+2023-04-09T08:43:45.502+03:00  INFO 25288 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@22e650e, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@30a79476, org.springframework.security.web.context.SecurityContextHolderFilter@3ae91bcc, org.springframework.security.web.header.HeaderWriterFilter@6e5df971, org.springframework.web.filter.CorsFilter@376bae20, org.springframework.security.web.authentication.logout.LogoutFilter@3dfaa1e4, com.example.demo.filter.JwtAuthFilter@1e0c898c, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5625e7e1, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2d398cfb, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@37f0fb02, org.springframework.security.web.session.SessionManagementFilter@1a18e68a, org.springframework.security.web.access.ExceptionTranslationFilter@44ba9f25, org.springframework.security.web.access.intercept.AuthorizationFilter@51ac72f7]
+2023-04-09T08:43:45.900+03:00  INFO 25288 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-04-09T08:43:45.918+03:00  INFO 25288 --- [main] c.example.demo.LoanServiceApplication    : Started LoanServiceApplication in 6.899 seconds (process running for 7.465)
+2023-04-09T08:43:45.964+03:00  INFO 25288 --- [main] c.example.demo.LoanServiceApplication    : Searching for user with name: admin
+2023-04-09T08:43:46.144+03:00  INFO 25288 --- [main] c.example.demo.LoanServiceApplication    : User not found, creating new user with default values
+2023-04-09T08:43:46.297+03:00  INFO 25288 --- [main] c.example.demo.LoanServiceApplication    : New user created: UserInfo(id=1, name=admin, password=$2a$10$.svi6y2/cM1qDpGEi529F.634634JSt2f/XPFJiV9eQpb847VKQ5e)
+2023-04-09T08:43:46.297+03:00  INFO 25288 --- [main] c.example.demo.LoanServiceApplication    : [Inside the CommandLineRunner method]: persisting customer data to the database
+2023-04-09T08:43:46.646+03:00  INFO 25288 --- [main] c.example.demo.LoanServiceApplication    : The generated token is: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTY4MTAxOTAyNiwiZXhwIjoxNjgxNjY3MDI2fQ.qEfz2dSXjc6GBCFX2_-ZylaY2PjxTMXk92DKQ6lZBBM
+2023-04-09T08:43:46.647+03:00  INFO 25288 --- [main] c.example.demo.LoanServiceApplication    : [Inside the CommandLineRunner method]: calling the RestTemplate class which invokes the api
+2023-04-09T08:43:46.760+03:00  INFO 25288 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-04-09T08:43:46.761+03:00  INFO 25288 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-04-09T08:43:46.763+03:00  INFO 25288 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2023-04-09T08:43:46.903+03:00  INFO 25288 --- [main] c.example.demo.LoanServiceApplication    : API call failed with error: 403 : [no body]
+2023-04-09T08:43:46.922+03:00  INFO 25288 --- [main] c.example.demo.LoanServiceApplication    : API call failed with error: 403 : [no body]
+2023-04-09T08:43:46.941+03:00  INFO 25288 --- [main] c.example.demo.LoanServiceApplication    : API call failed with error: 403 : [no body]
+2023-04-09T08:43:46.959+03:00  INFO 25288 --- [main] c.example.demo.LoanServiceApplication    : API call failed with error: 403 : [no body]
+2023-04-09T08:43:46.978+03:00  INFO 25288 --- [main] c.example.demo.LoanServiceApplication    : API call failed with error: 403 : [no body]
+2023-04-09T08:44:25.933+03:00  INFO 11536 --- [main] c.example.demo.LoanServiceApplication    : Starting LoanServiceApplication using Java 17.0.4 with PID 11536 (C:\MY_PROJECTS\customer-loans\target\classes started by C849152 in C:\MY_PROJECTS\customer-loans)
+2023-04-09T08:44:25.936+03:00  INFO 11536 --- [main] c.example.demo.LoanServiceApplication    : The following 1 profile is active: "dev"
+2023-04-09T08:44:27.337+03:00  INFO 11536 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-04-09T08:44:27.453+03:00  INFO 11536 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 101 ms. Found 3 JPA repository interfaces.
+2023-04-09T08:44:28.372+03:00  INFO 11536 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-04-09T08:44:28.381+03:00  INFO 11536 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-04-09T08:44:28.382+03:00  INFO 11536 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.7]
+2023-04-09T08:44:28.529+03:00  INFO 11536 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-04-09T08:44:28.530+03:00  INFO 11536 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2507 ms
+2023-04-09T08:44:28.827+03:00  INFO 11536 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-04-09T08:44:28.901+03:00  INFO 11536 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.1.7.Final
+2023-04-09T08:44:29.276+03:00  INFO 11536 --- [main] com.zaxxer.hikari.HikariDataSource       : customer-loans-conn-pool - Starting...
+2023-04-09T08:44:29.547+03:00  INFO 11536 --- [main] com.zaxxer.hikari.pool.HikariPool        : customer-loans-conn-pool - Added connection org.postgresql.jdbc.PgConnection@7c0de229
+2023-04-09T08:44:29.549+03:00  INFO 11536 --- [main] com.zaxxer.hikari.HikariDataSource       : customer-loans-conn-pool - Start completed.
+2023-04-09T08:44:29.782+03:00  INFO 11536 --- [main] SQL dialect                              : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2023-04-09T08:44:30.862+03:00  INFO 11536 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-04-09T08:44:30.875+03:00  INFO 11536 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-04-09T08:44:31.540+03:00  WARN 11536 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-04-09T08:44:31.989+03:00  INFO 11536 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 14 endpoint(s) beneath base path '/admin'
+2023-04-09T08:44:32.041+03:00  INFO 11536 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@4fb42efa, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@35599228, org.springframework.security.web.context.SecurityContextHolderFilter@93c66ef, org.springframework.security.web.header.HeaderWriterFilter@4f2b1a2f, org.springframework.web.filter.CorsFilter@51ac72f7, org.springframework.security.web.authentication.logout.LogoutFilter@237b54bc, com.example.demo.filter.JwtAuthFilter@209b4b35, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1a18e68a, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@679886ad, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@15324f25, org.springframework.security.web.session.SessionManagementFilter@3358805a, org.springframework.security.web.access.ExceptionTranslationFilter@3531509c, org.springframework.security.web.access.intercept.AuthorizationFilter@46878216]
+2023-04-09T08:44:32.464+03:00  INFO 11536 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-04-09T08:44:32.483+03:00  INFO 11536 --- [main] c.example.demo.LoanServiceApplication    : Started LoanServiceApplication in 7.124 seconds (process running for 7.735)
+2023-04-09T08:44:32.530+03:00  INFO 11536 --- [main] c.example.demo.LoanServiceApplication    : Searching for user with name: admin
+2023-04-09T08:44:32.685+03:00  INFO 11536 --- [main] c.example.demo.LoanServiceApplication    : User not found, creating new user with default values
+2023-04-09T08:44:32.851+03:00  INFO 11536 --- [main] c.example.demo.LoanServiceApplication    : New user created: UserInfo(id=1, name=admin, password=$2a$10$.Upqw0tmWh3hKUU3kBVsIuPK2gZ0Sh15U1capErVv0C5TT4uZmFLG)
+2023-04-09T08:44:32.852+03:00  INFO 11536 --- [main] c.example.demo.LoanServiceApplication    : [Inside the CommandLineRunner method]: persisting customer data to the database
+2023-04-09T08:44:33.217+03:00  INFO 11536 --- [main] c.example.demo.LoanServiceApplication    : The generated token is: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTY4MTAxOTA3MywiZXhwIjoxNjgxNjY3MDczfQ.pqiwfmDoe-n-klG8Ey7CqqQfr10NfLxhqCNQrKI0fy4
+2023-04-09T08:44:33.217+03:00  INFO 11536 --- [main] c.example.demo.LoanServiceApplication    : [Inside the CommandLineRunner method]: calling the RestTemplate class which invokes the api
+2023-04-09T08:44:33.328+03:00  INFO 11536 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-04-09T08:44:33.329+03:00  INFO 11536 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-04-09T08:44:33.330+03:00  INFO 11536 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2023-04-09T08:44:33.452+03:00  INFO 11536 --- [main] c.example.demo.LoanServiceApplication    : API call failed with error: 403 : [no body]
+2023-04-09T08:44:33.477+03:00  INFO 11536 --- [main] c.example.demo.LoanServiceApplication    : API call failed with error: 403 : [no body]
+2023-04-09T08:44:33.503+03:00  INFO 11536 --- [main] c.example.demo.LoanServiceApplication    : API call failed with error: 403 : [no body]
+2023-04-09T08:44:33.525+03:00  INFO 11536 --- [main] c.example.demo.LoanServiceApplication    : API call failed with error: 403 : [no body]
+2023-04-09T08:44:33.542+03:00  INFO 11536 --- [main] c.example.demo.LoanServiceApplication    : API call failed with error: 403 : [no body]
+2023-04-09T08:45:07.694+03:00  INFO 11536 --- [http-nio-8080-exec-2] o.springdoc.api.AbstractOpenApiResource  : Init duration for springdoc-openapi is: 450 ms
+2023-04-09T08:45:49.649+03:00  INFO 11536 --- [http-nio-8080-exec-9] o.springdoc.api.AbstractOpenApiResource  : Init duration for springdoc-openapi is: 126 ms
