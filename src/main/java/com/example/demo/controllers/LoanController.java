@@ -20,6 +20,20 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/v1/loans")
+@ApiResponses(value = {
+
+        @ApiResponse(responseCode = "200", description="Successful operation"),
+        @ApiResponse(responseCode = "400", description="Bad Request. The request was invalid or cannot be served"),
+        @ApiResponse(responseCode = "401", description="Unauthorized. The authentication failed"),
+        @ApiResponse(responseCode = "403", description="Forbidden. The user may not be having the necessary permissions for a resource"),
+        @ApiResponse(responseCode = "404", description="Not Found. The resource could not be found"),
+        @ApiResponse(responseCode = "500", description="Internal server error. The server encountered an unexpected condition which prevented it fulfilling the request"),
+        @ApiResponse(responseCode = "timestamp", description="The time at which the api was invoked"),
+        @ApiResponse(responseCode = "operation_result", description="0 means Success while 1 means Failed"),
+        @ApiResponse(responseCode = "operation_description", description="Success describes operation_result of 0 whereas Failed describes operation_result of 1"),
+        @ApiResponse(responseCode = "message", description="The response message for the api operation")
+
+})
 public class LoanController {
 
     @Autowired
@@ -30,15 +44,7 @@ public class LoanController {
 
     @Autowired
     private AuthenticationManager authenticationManager;
-
-    @ApiResponses(value = {
-            @ApiResponse(responseCode = "200", description="Successful operation"),
-            @ApiResponse(responseCode = "400", description="Bad Request. The request was invalid or cannot be served"),
-            @ApiResponse(responseCode = "401", description="Unauthorized. The authentication failed"),
-            @ApiResponse(responseCode = "403", description="Forbidden. The user may not be having the necessary permissions for a resource"),
-            @ApiResponse(responseCode = "404", description="Not Found. The resource could not be found"),
-            @ApiResponse(responseCode = "500", description="Internal server error. The server encountered an unexpected condition which prevented it fulfilling the request")
-    })
+    
     @Operation(summary = "Get a customer's loans by their account number", description = "Returns a list of all the customers loans")
     @GetMapping("/status")
     public ResponseEntity<?> getLoanStatus(@RequestParam("accountNumber") int accountNumber, @RequestHeader String Authorization) {
