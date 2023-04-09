@@ -41,7 +41,7 @@ public class SecurityConfiguration {
         return http.cors().configurationSource(corsConfigurationSource()).and()
                 .csrf().disable()
                 .authorizeHttpRequests()
-                .requestMatchers("/api/v1/loans/authenticate", "/customer-docs").permitAll()
+                .requestMatchers("/api/v1/loans/authenticate", "/customer-docs", "/swagger-ui/index.html").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .sessionManagement()
@@ -51,6 +51,21 @@ public class SecurityConfiguration {
                 .addFilterBefore(authFilter, UsernamePasswordAuthenticationFilter.class)
                 .build();
     }
+
+
+//    @Bean
+//    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+//        return http.cors().configurationSource(corsConfigurationSource()).and()
+//                .csrf().disable()
+//                .authorizeHttpRequests().anyRequest().permitAll()
+//                .and()
+//                .sessionManagement()
+//                .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
+//                .and()
+//                .authenticationProvider(authenticationProvider())
+//                .addFilterBefore(authFilter, UsernamePasswordAuthenticationFilter.class)
+//                .build();
+//    }
 
 
 
