@@ -6,6 +6,7 @@ import com.example.demo.dtos.AuthRequest;
 import com.example.demo.dtos.LoanStatus;
 import com.example.demo.services.JwtService;
 import com.example.demo.services.LoanService;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -28,7 +29,7 @@ public class LoanController {
     private AuthenticationManager authenticationManager;
 
     @GetMapping("/status")
-    public ResponseEntity<?> getLoanStatus(@RequestHeader() @RequestParam("accountNumber") int accountNumber) {
+    public ResponseEntity<?> getLoanStatus(@RequestParam("accountNumber") int accountNumber, @RequestHeader String Authorization) {
         LoanStatus loans = loanService.getLoanStatus(accountNumber);
         return new ResponseEntity<>(new OperationResponse(Constants.OPERATION_SUCCESS_CODE, Constants.OPERATION_SUCCESS_DESCRIPTION, "These are the customer's loans", loans), HttpStatus.OK);
     }
