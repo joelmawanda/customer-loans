@@ -1,6 +1,5 @@
 package com.example.demo.dtos;
 
-import com.example.demo.entities.Customer;
 import com.example.demo.entities.Loan;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.databind.PropertyNamingStrategies;
@@ -29,14 +28,11 @@ public class LoanDTO {
 
     private BigDecimal outstandingAmount;
 
-    private int accountNumber;
-
     public LoanDTO(Loan loan) {
         this.customerId = loan.getCustomer().getCustomerId();
         this.loanId = loan.getLoanId();
         this.disbursementDate = loan.getDisbursementDate();
         this.outstandingAmount = loan.getOutstandingAmount();
-        this.accountNumber = loan.getCustomer().getAccountNumber();
     }
 
 }

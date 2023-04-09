@@ -5,6 +5,12 @@ import lombok.Data;
 
 import java.util.Set;
 
+@NamedEntityGraph(name = "Customer.withLoans",
+        attributeNodes = {
+                @NamedAttributeNode(value = "loans")
+        }
+)
+
 @Entity
 @Table(name = "customers")
 @Data
@@ -18,7 +24,7 @@ public class Customer {
     @Column(name = "account_number", nullable = false, unique = true)
     private int accountNumber;
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "customer", cascade = CascadeType.ALL)
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "customer", cascade = CascadeType.ALL)
     private Set<Loan> loans;
 }
 

@@ -2,12 +2,8 @@ package com.example.demo.entities;
 import jakarta.persistence.*;
 import lombok.Data;
 import org.hibernate.annotations.CreationTimestamp;
-import org.springframework.data.annotation.CreatedDate;
-
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
-import java.util.Date;
-import java.util.Set;
 
 @Entity
 @Table(name = "loans")
@@ -19,7 +15,7 @@ public class Loan {
     @Column(name = "loan_id")
     private Long loanId;
 
-    @ManyToOne(fetch = FetchType.EAGER, optional = false)
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "customer_id")
     private Customer customer;
 

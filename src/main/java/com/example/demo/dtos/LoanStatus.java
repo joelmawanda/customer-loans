@@ -1,7 +1,5 @@
 package com.example.demo.dtos;
 
-
-import com.example.demo.entities.Customer;
 import com.example.demo.entities.Loan;
 import lombok.Data;
 
@@ -16,5 +14,4 @@ public class LoanStatus {
     public LoanStatus(List<Loan> loans) {
         this.loans = loans.stream().map(LoanDTO::new).collect(Collectors.toList());
     }
-
 }
