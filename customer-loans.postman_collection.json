@@ -2,6 +2,7 @@
 	"info": {
 		"_postman_id": "8097bef6-390b-4bef-8cf6-668c443c69f3",
 		"name": "customer-loans",
+		"description": "This is an API that gets a customer's loans",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
@@ -29,7 +30,8 @@
 							"value": "1557461259"
 						}
 					]
-				}
+				},
+				"description": "This endpoint returns a customer's loans.It takes accountNumber as a query parameter"
 			},
 			"response": []
 		},
@@ -50,7 +52,8 @@
 						"metrics",
 						"http.server.requests"
 					]
-				}
+				},
+				"description": "This is a spring actuator endpoint which returns the API metrics."
 			},
 			"response": []
 		},
@@ -84,6 +87,52 @@
 						"loans",
 						"authenticate"
 					]
+				},
+				"description": "This endpoint is used to authenticate a user who wants to use the APIs."
+			},
+			"response": []
+		},
+		{
+			"name": "api-documentation",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/customer-docs",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"customer-docs"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "swagger-ui-documentation",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/customer-docs/ui",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"customer-docs",
+						"ui"
+					]
 				}
 			},
 			"response": []
@@ -94,7 +143,7 @@
 		"bearer": [
 			{
 				"key": "token",
-				"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTY4MDg3MDQwMywiZXhwIjoxNjgxNTE4NDAzfQ.M5ANXwlIqfzyKe123CBA8sHodaP0U8HxIeqIzVcuNyY",
+				"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTY4MDk1NjMwNiwiZXhwIjoxNjgxNjA0MzA2fQ.ywIAIHdrCNZW4aM_AgICEOGU25tMz235Ocl-XvjW2NU",
 				"type": "string"
 			}
 		]
