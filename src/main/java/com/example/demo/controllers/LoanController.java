@@ -44,7 +44,7 @@ public class LoanController {
 
     @Autowired
     private AuthenticationManager authenticationManager;
-    
+
     @Operation(summary = "Get a customer's loans by their account number", description = "Returns a list of all the customers loans")
     @GetMapping("/status")
     public ResponseEntity<?> getLoanStatus(@RequestParam("accountNumber") int accountNumber, @RequestHeader String Authorization) {
