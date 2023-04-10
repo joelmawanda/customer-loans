@@ -1,4 +1,4 @@
-# customer-loans-API
+# Customer-Loans-API
 This API provides information about a customer’s loan status. You must first authenticate in order to use it. After the user has been authenticated successfully, they can query for a customer's loans using the customer's account number as a parameter. The account number is validated first (against a list of account numbers).
 If it is invalid, an appropriate error response is returned. If it is valid, the customer’s loan status is ascertained by checking a list of current loans.
 If a customer has one or more outstanding loans, a response containing the details of these outstanding loans is retruned. If a customer has no outstanding loans, the response is a simple “no loan found” message with an appropriate response code.
