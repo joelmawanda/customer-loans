@@ -4,7 +4,7 @@ If it is invalid, an appropriate error response is returned. If it is valid, the
 If a customer has one or more outstanding loans, a response containing the details of these outstanding loans is retruned. If a customer has no outstanding loans, the response is a simple “no loan found” message with an appropriate response code.
 
 # Getting started
-This API is developed in spring boot and the reason is because spring boot has an emebedded Tomcat server therefore no need to configure one, It is opinionated thus helping developers add and customise starter dependencies saving developers' time, it also allows for dependency injections, it also has a provision to run jars independently, presence of spring security.
+This API is developed in spring boot and the reason is because spring boot has an emebedded Tomcat server therefore no need to configure one, It is opinionated thus helping developers add and customise starter dependencies saving thus developers' time, it also allows for dependency injections, it also has a provision to run jars independently, presence of spring security.
 # Prerequisites
   •	Docker
 # Clone the repository
