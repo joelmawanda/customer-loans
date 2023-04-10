@@ -7,7 +7,7 @@ If a customer has one or more outstanding loans, a response containing the detai
 # Prerequisites
   •	Docker
 # Clone the repository
-git clone https://github.com/yourusername/rank-based-command-execution.git 
+git clone https://github.com/joelmawanda/customer-loans.git
 # Run the application
   1.Docker build -t app .
   2.Docker run -p 8080:8080 app
