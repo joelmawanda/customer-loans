@@ -13,8 +13,8 @@ git clone https://github.com/joelmawanda/customer-loans.git
   2. **Docker run -p 8080:8080 app**
 # Verify the application is running:
   • Once the container is running, verify that the application is running by 
-    opening a web browser and navigating to **`http://localhost:8080`** or by 
-    using a tool such as `curl`
+      opening a web browser and navigating to **`http://localhost:8080`** or by 
+      using a tool such as `curl`
 
 ## License
 This project is licensed under the [MIT License](LICENSE) - see the LICENSE file for details.
