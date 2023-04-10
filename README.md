@@ -9,11 +9,11 @@ If a customer has one or more outstanding loans, a response containing the detai
 # Clone the repository
 git clone https://github.com/joelmawanda/customer-loans.git
 # Run the application
-  1.Docker build -t app .
-  2.Docker run -p 8080:8080 app
+  1. **Docker build -t app .**
+  2. **Docker run -p 8080:8080 app**
 # Verify the application is running:
   • Once the container is running, verify that the application is running by 
-    opening a web browser and navigating to `http://localhost:8080` or by 
+    opening a web browser and navigating to **`http://localhost:8080`** or by 
     using a tool such as `curl`
 
 ## License
