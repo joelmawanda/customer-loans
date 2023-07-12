@@ -37,6 +37,7 @@ public class LoanService {
     public List<LoanDTO> getLoanStatus(int accountNumber) throws InvalidAccountNumberException, NoLoanFoundException {
         log.info("[Inside the getLoanStatus method]: Retrieving customer loans for account number " + accountNumber + " from the database");
         Optional<Customer> optionalCustomer = customerRepository.findByAccountNumber(accountNumber);
+
         if (optionalCustomer.isEmpty()) {
             throw new InvalidAccountNumberException("Invalid account number");
         }
@@ -45,29 +46,25 @@ public class LoanService {
         if (loans.isEmpty()) {
             throw new NoLoanFoundException("No loan found");
         }
-        return  loans.stream().map(this::convertToDto).collect(Collectors.toList());
+        return loans.stream().map(loan -> {
+            LoanDTO loanDTO = modelMapper.map(loan, LoanDTO.class);
+            loanDTO.setCustomerId(loan.getCustomer().getCustomerId());
+            loanDTO.setLoanId(loan.getLoanId());
+            loanDTO.setDisbursementDate(loan.getDisbursementDate());
+            loanDTO.setOutstandingAmount(loan.getOutstandingAmount());
+            return loanDTO;
+        }).collect(Collectors.toList());
     }
 
-    private LoanDTO convertToDto(Loan loan) {
-        LoanDTO loanDTO = modelMapper.map(loan, LoanDTO.class);
-        loanDTO.setCustomerId(loan.getCustomer().getCustomerId());
-        loanDTO.setLoanId(loan.getLoanId());
-        loanDTO.setDisbursementDate(loan.getDisbursementDate());
-        loanDTO.setOutstandingAmount(loan.getOutstandingAmount());
-        return loanDTO;
-    }
-
-    private CustomerDTO convertToCustomerDto(Customer customer) {
-        CustomerDTO customerDTO = modelMapper.map(customer, CustomerDTO.class);
-        customerDTO.setCustomerId(customer.getCustomerId());
-        customerDTO.setAccountNumber(customer.getAccountNumber());
-        customerDTO.setLoans(customer.getLoans());
-        return customerDTO;
-    }
-
-    public List<CustomerDTO> getCustomers (CustomerDTO customerDTO) {
+    public List<CustomerDTO> getCustomers() {
         List<Customer> customers = customerRepository.findAll();
-        return customers.stream().map(this::convertToCustomerDto).collect(Collectors.toList());
+        return customers.stream().map(customer -> {
+            CustomerDTO customerDTO = modelMapper.map(customer, CustomerDTO.class);
+            customerDTO.setCustomerId(customer.getCustomerId());
+            customerDTO.setAccountNumber(customer.getAccountNumber());
+            customerDTO.setLoans(customer.getLoans());
+            return customerDTO;
+        }).collect(Collectors.toList());
     }
 }
 

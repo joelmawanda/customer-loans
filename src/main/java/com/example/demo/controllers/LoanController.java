@@ -56,8 +56,8 @@ public class LoanController {
 
     @Operation(summary = "Get all customers", description = "Returns a list of all the customers")
     @PostMapping("/customers")
-    public ResponseEntity<?> getCustomers(CustomerDTO customerDTO, @RequestHeader String Authorization) {
-        List<CustomerDTO> customers = loanService.getCustomers(customerDTO);
+    public ResponseEntity<?> getCustomers(@RequestHeader String Authorization) {
+        List<CustomerDTO> customers = loanService.getCustomers();
         return new ResponseEntity<>(new OperationResponse(Constants.OPERATION_SUCCESS_CODE, Constants.OPERATION_SUCCESS_DESCRIPTION, "These are the customers", customers), HttpStatus.OK);
     }
 
