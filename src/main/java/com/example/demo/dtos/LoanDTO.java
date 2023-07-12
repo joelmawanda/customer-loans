@@ -5,10 +5,13 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.databind.PropertyNamingStrategies;
 import com.fasterxml.jackson.databind.annotation.JsonNaming;
 import lombok.Data;
+import lombok.NoArgsConstructor;
+
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 @Data
+@NoArgsConstructor
 @JsonPropertyOrder({
         "customer_id",
         "customer_name",
@@ -34,5 +37,4 @@ public class LoanDTO {
         this.disbursementDate = loan.getDisbursementDate();
         this.outstandingAmount = loan.getOutstandingAmount();
     }
-
 }

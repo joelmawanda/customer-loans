@@ -3,13 +3,13 @@ package com.example.demo.controllers;
 import com.example.demo.apiResponse.Constants;
 import com.example.demo.apiResponse.OperationResponse;
 import com.example.demo.dtos.AuthRequest;
-import com.example.demo.dtos.LoanStatus;
+import com.example.demo.dtos.CustomerDTO;
+import com.example.demo.dtos.LoanDTO;
 import com.example.demo.services.JwtService;
 import com.example.demo.services.LoanService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
-import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -17,6 +17,8 @@ import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/api/v1/loans")
@@ -48,8 +50,15 @@ public class LoanController {
     @Operation(summary = "Get a customer's loans by their account number", description = "Returns a list of all the customers loans")
     @GetMapping("/status")
     public ResponseEntity<?> getLoanStatus(@RequestParam("accountNumber") int accountNumber, @RequestHeader String Authorization) {
-        LoanStatus loans = loanService.getLoanStatus(accountNumber);
+        List<LoanDTO> loans = loanService.getLoanStatus(accountNumber);
         return new ResponseEntity<>(new OperationResponse(Constants.OPERATION_SUCCESS_CODE, Constants.OPERATION_SUCCESS_DESCRIPTION, "These are the customer's loans", loans), HttpStatus.OK);
+    }
+
+    @Operation(summary = "Get all customers", description = "Returns a list of all the customers")
+    @PostMapping("/customers")
+    public ResponseEntity<?> getCustomers(CustomerDTO customerDTO, @RequestHeader String Authorization) {
+        List<CustomerDTO> customers = loanService.getCustomers(customerDTO);
+        return new ResponseEntity<>(new OperationResponse(Constants.OPERATION_SUCCESS_CODE, Constants.OPERATION_SUCCESS_DESCRIPTION, "These are the customers", customers), HttpStatus.OK);
     }
 
     @Operation(summary = "Authenticate user", description = "Authenticates a user and generates a JWT token for the user")

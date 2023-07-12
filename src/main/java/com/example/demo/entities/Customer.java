@@ -26,5 +26,7 @@ public class Customer {
 
     @OneToMany(fetch = FetchType.EAGER, mappedBy = "customer", cascade = CascadeType.ALL)
     private Set<Loan> loans;
+
+
 }
 
