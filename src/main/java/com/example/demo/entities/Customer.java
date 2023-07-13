@@ -3,6 +3,9 @@ package com.example.demo.entities;
 import jakarta.persistence.*;
 import lombok.Data;
 
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 @NamedEntityGraph(name = "Customer.withLoans",
@@ -25,7 +28,8 @@ public class Customer {
     private int accountNumber;
 
     @OneToMany(fetch = FetchType.EAGER, mappedBy = "customer", cascade = CascadeType.ALL)
-    private Set<Loan> loans;
+//    private Set<Loan> loans;
+    private Set<Loan> loans = new HashSet<>();
 
 
 }
