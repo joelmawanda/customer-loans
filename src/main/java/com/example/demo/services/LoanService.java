@@ -58,13 +58,8 @@ public class LoanService {
 
     public List<CustomerDTO> getCustomers() {
         List<Customer> customers = customerRepository.findAll();
-        return customers.stream().map(customer -> {
-            CustomerDTO customerDTO = modelMapper.map(customer, CustomerDTO.class);
-            customerDTO.setCustomerId(customer.getCustomerId());
-            customerDTO.setAccountNumber(customer.getAccountNumber());
-            customerDTO.setLoans(customer.getLoans());
-            return customerDTO;
-        }).collect(Collectors.toList());
+        return customers.stream().map(customer -> modelMapper.map(customer, CustomerDTO.class))
+                .collect(Collectors.toList());
     }
 }
 
