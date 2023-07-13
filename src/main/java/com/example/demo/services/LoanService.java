@@ -46,14 +46,8 @@ public class LoanService {
         if (loans.isEmpty()) {
             throw new NoLoanFoundException("No loan found");
         }
-        return loans.stream().map(loan -> {
-            LoanDTO loanDTO = modelMapper.map(loan, LoanDTO.class);
-            loanDTO.setCustomerId(loan.getCustomer().getCustomerId());
-            loanDTO.setLoanId(loan.getLoanId());
-            loanDTO.setDisbursementDate(loan.getDisbursementDate());
-            loanDTO.setOutstandingAmount(loan.getOutstandingAmount());
-            return loanDTO;
-        }).collect(Collectors.toList());
+        return loans.stream().map(loan -> modelMapper.map(loan, LoanDTO.class))
+        .collect(Collectors.toList());
     }
 
     public List<CustomerDTO> getCustomers() {
