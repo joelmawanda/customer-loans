@@ -62,7 +62,8 @@ public class JwtService {
             Date expirationDate = extractExpirationDateFromToken(existingToken.get().getToken());
 
             if (expirationDate != null && expirationDate.after(new Date())) {
-                return "You are already authenticated.";
+//                return "You are already authenticated.";
+                return existingToken.get().getToken();
             }
         }
 
