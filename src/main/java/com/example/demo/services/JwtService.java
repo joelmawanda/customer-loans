@@ -56,10 +56,10 @@ public class JwtService {
     }
 
     public String generateToken(String userName) {
-        Token existingToken = tokenRepository.findByUsername(userName);
+        Optional<Token> existingToken = tokenRepository.findByUsername(userName);
 
-        if (existingToken != null) {
-            Date expirationDate = extractExpirationDateFromToken(existingToken.getToken());
+        if (existingToken.isPresent()) {
+            Date expirationDate = extractExpirationDateFromToken(existingToken.get().getToken());
 
             if (expirationDate != null && expirationDate.after(new Date())) {
                 return "You are already authenticated.";
@@ -102,7 +102,8 @@ public class JwtService {
                 .setClaims(claims)
                 .setSubject(userName)
                 .setIssuedAt(new Date(System.currentTimeMillis()))
-                .setExpiration(new Date(System.currentTimeMillis()+1000*60*30)) //expires in 30 minutes
+//                .setExpiration(new Date(System.currentTimeMillis()+1000*60*30)) //expires in 30 minutes
+                .setExpiration(new Date(System.currentTimeMillis()+5000))
                 .signWith(getSignKey(), SignatureAlgorithm.HS256).compact();
     }
 
