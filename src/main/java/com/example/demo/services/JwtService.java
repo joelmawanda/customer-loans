@@ -10,6 +10,7 @@ import io.jsonwebtoken.SignatureAlgorithm;
 import io.jsonwebtoken.io.Decoders;
 import io.jsonwebtoken.security.Keys;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Component;
 import java.security.Key;
@@ -18,6 +19,7 @@ import java.util.function.Function;
 
 @Component
 @RequiredArgsConstructor
+@Slf4j
 public class JwtService {
 
     private final TokenRepository tokenRepository;
@@ -56,15 +58,18 @@ public class JwtService {
     }
 
     public String generateToken(String userName) {
-        Optional<Token> existingToken = tokenRepository.findByUsername(userName);
+        log.info("Inside generateToken");
+        Token existingToken = tokenRepository.findByUsername(userName);
 
-        if (existingToken.isPresent()) {
-            Date expirationDate = extractExpirationDateFromToken(existingToken.get().getToken());
+        if (existingToken != null) {
+            Date expirationDate = extractExpirationDateFromToken(existingToken.getToken());
 
             if (expirationDate != null && expirationDate.after(new Date())) {
-//                return "You are already authenticated.";
-                return existingToken.get().getToken();
+                log.info("Returning the old token");
+                return existingToken.getToken();
             }
+
+            tokenRepository.delete(existingToken);
         }
 
         Map<String, Object> claims = new HashMap<>();
@@ -75,6 +80,7 @@ public class JwtService {
         newToken.setUsername(extractUsernameFromToken(token));
         newToken.setToken(token);
         tokenRepository.save(newToken);
+        log.info("Returning a new token");
         return token;
     }
 
@@ -103,8 +109,8 @@ public class JwtService {
                 .setClaims(claims)
                 .setSubject(userName)
                 .setIssuedAt(new Date(System.currentTimeMillis()))
-//                .setExpiration(new Date(System.currentTimeMillis()+1000*60*30)) //expires in 30 minutes
-                .setExpiration(new Date(System.currentTimeMillis()+5000))
+                .setExpiration(new Date(System.currentTimeMillis()+1000*60*30)) //expires in 30 minutes
+//                .setExpiration(new Date(System.currentTimeMillis()+5000))
                 .signWith(getSignKey(), SignatureAlgorithm.HS256).compact();
     }
 

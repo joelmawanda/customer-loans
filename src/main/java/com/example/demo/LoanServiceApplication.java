@@ -40,7 +40,7 @@ import java.util.Random;
 @SpringBootApplication(exclude = {SecurityAutoConfiguration.class})
 @OpenAPIDefinition(info = @Info(title = "Customer Products API", version = "1.0", description = "This API returns a customer's loans by account number"))
 @Slf4j
-public class LoanServiceApplication implements CommandLineRunner {
+public class LoanServiceApplication  {
 
 	private static  final String DEFAULT_ADMIN_USERNAME = "admin";
 	private static  final String DEFAULT_ADMIN_PASSWORD = "admin";
@@ -64,7 +64,7 @@ public class LoanServiceApplication implements CommandLineRunner {
 	@Autowired
 	private AuthenticationManager authenticationManager;
 
-	@Override
+//	@Override
 	public void run(String... args) throws Exception {
 
 		PasswordEncoder passwordEncoder = new BCryptPasswordEncoder();

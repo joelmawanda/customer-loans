@@ -64,14 +64,10 @@ public class LoanController {
     @Operation(summary = "Authenticate user", description = "Authenticates a user and generates a JWT token for the user")
     @PostMapping("/authenticate")
     public ResponseEntity<?> authenticateAndGetToken(@RequestBody AuthRequest authRequest) {
-        try {
+
             Authentication authentication = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(authRequest.getUsername(), authRequest.getPassword()));
             String token = jwtService.generateToken(authRequest.getUsername());
             return new ResponseEntity<>(new OperationResponse(Constants.OPERATION_SUCCESS_CODE, Constants.OPERATION_SUCCESS_DESCRIPTION, "Authenticated Successfully", token), HttpStatus.OK);
-        } catch (Exception ex) {
-            return new ResponseEntity<>(new OperationResponse(Constants.OPERATION_FAILURE_CODE, Constants.OPERATION_FAILED_DESCRIPTION, "Failed to Authenticate user"), HttpStatus.BAD_REQUEST);
-        }
-
     }
 }
 
