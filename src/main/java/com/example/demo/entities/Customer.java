@@ -28,9 +28,6 @@ public class Customer {
     private int accountNumber;
 
     @OneToMany(fetch = FetchType.EAGER, mappedBy = "customer", cascade = CascadeType.ALL)
-//    private Set<Loan> loans;
     private Set<Loan> loans = new HashSet<>();
-
-
 }
 

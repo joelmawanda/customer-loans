@@ -3220,3 +3220,845 @@ Caused by: org.springframework.security.access.AccessDeniedException: Access Den
 2023-07-13T09:44:27.168+03:00  INFO 21716 --- [http-nio-8080-exec-1] com.example.demo.services.LoanService    : [Inside the getLoanStatus method]: Retrieving customer loans for account number 1801403959 from the database
 2023-07-13T09:44:30.772+03:00  INFO 21716 --- [http-nio-8080-exec-5] com.example.demo.services.LoanService    : [Inside the getLoanStatus method]: Retrieving customer loans for account number 1114946631 from the database
 2023-07-13T09:44:34.417+03:00  INFO 21716 --- [http-nio-8080-exec-6] com.example.demo.services.LoanService    : [Inside the getLoanStatus method]: Retrieving customer loans for account number 1114946631 from the database
+2023-07-13T09:52:35.548+03:00  INFO 22852 --- [main] c.example.demo.LoanServiceApplication    : Starting LoanServiceApplication using Java 17.0.4 with PID 22852 (C:\My_projects\customer-loans\target\classes started by C849152 in C:\My_projects\customer-loans)
+2023-07-13T09:52:35.553+03:00  INFO 22852 --- [main] c.example.demo.LoanServiceApplication    : The following 1 profile is active: "dev"
+2023-07-13T09:52:38.002+03:00  INFO 22852 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-07-13T09:52:38.162+03:00  INFO 22852 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 143 ms. Found 3 JPA repository interfaces.
+2023-07-13T09:52:39.473+03:00  INFO 22852 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-07-13T09:52:39.484+03:00  INFO 22852 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-07-13T09:52:39.490+03:00  INFO 22852 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.7]
+2023-07-13T09:52:39.743+03:00  INFO 22852 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-07-13T09:52:39.744+03:00  INFO 22852 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4038 ms
+2023-07-13T09:52:40.147+03:00  INFO 22852 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-07-13T09:52:40.266+03:00  INFO 22852 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.1.7.Final
+2023-07-13T09:52:40.863+03:00  INFO 22852 --- [main] com.zaxxer.hikari.HikariDataSource       : customer-loans-conn-pool - Starting...
+2023-07-13T09:52:41.341+03:00  INFO 22852 --- [main] com.zaxxer.hikari.pool.HikariPool        : customer-loans-conn-pool - Added connection org.postgresql.jdbc.PgConnection@284d4885
+2023-07-13T09:52:41.346+03:00  INFO 22852 --- [main] com.zaxxer.hikari.HikariDataSource       : customer-loans-conn-pool - Start completed.
+2023-07-13T09:52:41.817+03:00  INFO 22852 --- [main] SQL dialect                              : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2023-07-13T09:52:44.023+03:00  INFO 22852 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-07-13T09:52:44.044+03:00  INFO 22852 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-07-13T09:52:45.042+03:00  WARN 22852 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-07-13T09:52:45.746+03:00  INFO 22852 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 14 endpoint(s) beneath base path '/admin'
+2023-07-13T09:52:45.821+03:00  INFO 22852 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@3f910f36, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6421bc7e, org.springframework.security.web.context.SecurityContextHolderFilter@3f7a7ce6, org.springframework.security.web.header.HeaderWriterFilter@29b2a94c, org.springframework.web.filter.CorsFilter@2e2546bf, org.springframework.security.web.authentication.logout.LogoutFilter@27f4761b, com.example.demo.filter.JwtAuthFilter@628aea61, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@3d8512e9, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@118f39f3, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5e572b08, org.springframework.security.web.session.SessionManagementFilter@39d37da8, org.springframework.security.web.access.ExceptionTranslationFilter@48cc060d, org.springframework.security.web.access.intercept.AuthorizationFilter@785477e5]
+2023-07-13T09:52:46.447+03:00  INFO 22852 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-07-13T09:52:46.475+03:00  INFO 22852 --- [main] c.example.demo.LoanServiceApplication    : Started LoanServiceApplication in 11.838 seconds (process running for 12.813)
+2023-07-13T09:52:46.561+03:00  INFO 22852 --- [main] c.example.demo.LoanServiceApplication    : Searching for user with name: admin
+2023-07-13T09:52:46.837+03:00  INFO 22852 --- [main] c.example.demo.LoanServiceApplication    : Found User: UserInfo(id=1, name=admin, password=$2a$10$MzKfvf.dG8keIRBwTVAhHe0bkrz8bCDPtm0lf08BgwySkS8fVGzW2)
+2023-07-13T09:52:46.840+03:00  INFO 22852 --- [main] c.example.demo.LoanServiceApplication    : [Inside the CommandLineRunner method]: persisting customer data to the database
+2023-07-13T09:52:47.366+03:00  INFO 22852 --- [main] c.example.demo.LoanServiceApplication    : The generated token is: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTY4OTIzMTE2NywiZXhwIjoxNjg5ODc5MTY3fQ.GnOUupJXb6Fmf16Ob2SiyLjdoIpOYjzZDSQqcfJS-6A
+2023-07-13T09:52:47.366+03:00  INFO 22852 --- [main] c.example.demo.LoanServiceApplication    : [Inside the CommandLineRunner method]: calling the RestTemplate class which invokes the api
+2023-07-13T09:52:47.525+03:00  INFO 22852 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-07-13T09:52:47.525+03:00  INFO 22852 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-07-13T09:52:47.528+03:00  INFO 22852 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2023-07-13T09:52:47.740+03:00  INFO 22852 --- [http-nio-8080-exec-1] com.example.demo.services.LoanService    : [Inside the getLoanStatus method]: Retrieving customer loans for account number 1150855198 from the database
+2023-07-13T09:52:47.830+03:00  INFO 22852 --- [http-nio-8080-exec-2] com.example.demo.services.LoanService    : [Inside the getLoanStatus method]: Retrieving customer loans for account number 1117552885 from the database
+2023-07-13T09:52:47.864+03:00  INFO 22852 --- [http-nio-8080-exec-3] com.example.demo.services.LoanService    : [Inside the getLoanStatus method]: Retrieving customer loans for account number 1513187420 from the database
+2023-07-13T09:52:47.895+03:00  INFO 22852 --- [http-nio-8080-exec-4] com.example.demo.services.LoanService    : [Inside the getLoanStatus method]: Retrieving customer loans for account number 1497473944 from the database
+2023-07-13T09:52:47.924+03:00  INFO 22852 --- [http-nio-8080-exec-5] com.example.demo.services.LoanService    : [Inside the getLoanStatus method]: Retrieving customer loans for account number 1425365571 from the database
+2023-07-13T09:52:59.367+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.367+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.367+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.371+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.372+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.373+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.374+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.374+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.375+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.376+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.376+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.377+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.377+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.377+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.377+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.382+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.382+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.383+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.383+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.383+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.384+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.385+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.386+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.387+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.387+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.388+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.389+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.389+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.390+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.391+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.392+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.392+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.393+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.393+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.394+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.395+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.395+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.395+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.395+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.398+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.398+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.398+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.398+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.398+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.398+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.402+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.402+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.402+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.402+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.405+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.406+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.407+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.408+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.409+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.409+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.410+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.410+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.411+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.411+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.412+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.412+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.412+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.412+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.412+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.412+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.412+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.416+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.416+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.416+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.416+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.416+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.416+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.416+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.416+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.416+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.420+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.421+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.423+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.424+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.424+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.425+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.426+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.426+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.427+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.428+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.428+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.428+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.428+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.430+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.430+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.431+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.431+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.431+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.431+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.433+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.434+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.435+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.435+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.435+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.435+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.438+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.439+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.439+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.440+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.440+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.441+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.441+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.442+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.442+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.443+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.443+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.444+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.444+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.444+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.445+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.445+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.445+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.445+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.445+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.445+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.445+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.445+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.445+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.450+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.451+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.451+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.452+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.453+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.453+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.453+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.453+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.455+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.456+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.457+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.457+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.458+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.458+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.458+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.459+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.459+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.460+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.460+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.461+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.461+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.462+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.462+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.463+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.464+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.464+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.466+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.466+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.467+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.467+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.467+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.467+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.467+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.467+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.467+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.467+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.471+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.472+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.473+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.473+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.473+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.474+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.475+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.476+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.476+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.477+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.478+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.478+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.479+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.479+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.480+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.480+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.480+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.480+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.480+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.480+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.483+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.483+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.483+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.483+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.483+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.483+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.483+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.483+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.483+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.487+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.488+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.489+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.490+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.490+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.491+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.492+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.492+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.493+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.493+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.494+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.494+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.496+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.496+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.497+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.497+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.497+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.497+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.497+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.498+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.498+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.499+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.499+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.500+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.500+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.501+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.501+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.501+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.501+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.503+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.503+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.504+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.505+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.506+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.507+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.508+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.508+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.508+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.508+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.508+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.509+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.510+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.511+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.511+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.512+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.512+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.513+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.513+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.513+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.513+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.514+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.514+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.515+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.515+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.516+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.516+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.516+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.517+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.517+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.517+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.517+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.517+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.517+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.517+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.517+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.517+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.517+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.517+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.517+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.517+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.517+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.521+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.521+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.522+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.523+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.524+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.524+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.524+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.525+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.525+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.525+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.526+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.526+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.526+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.527+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.527+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.527+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.527+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.528+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.528+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.528+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.528+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.528+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.528+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.530+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.530+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.530+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.530+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.530+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.530+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.531+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.531+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.532+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.532+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.532+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.532+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.532+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.532+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.532+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.532+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.535+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.535+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.535+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.535+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.535+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.535+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.535+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.538+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.538+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.538+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.539+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:52:59.540+03:00  INFO 22852 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database
+2023-07-13T09:56:06.472+03:00  INFO 26444 --- [main] c.example.demo.LoanServiceApplication    : Starting LoanServiceApplication using Java 17.0.4 with PID 26444 (C:\My_projects\customer-loans\target\classes started by C849152 in C:\My_projects\customer-loans)
+2023-07-13T09:56:06.479+03:00  INFO 26444 --- [main] c.example.demo.LoanServiceApplication    : The following 1 profile is active: "dev"
+2023-07-13T09:56:08.958+03:00  INFO 26444 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-07-13T09:56:09.100+03:00  INFO 26444 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 120 ms. Found 3 JPA repository interfaces.
+2023-07-13T09:56:10.355+03:00  INFO 26444 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-07-13T09:56:10.371+03:00  INFO 26444 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-07-13T09:56:10.372+03:00  INFO 26444 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.7]
+2023-07-13T09:56:10.612+03:00  INFO 26444 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-07-13T09:56:10.612+03:00  INFO 26444 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3979 ms
+2023-07-13T09:56:11.051+03:00  INFO 26444 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-07-13T09:56:11.200+03:00  INFO 26444 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.1.7.Final
+2023-07-13T09:56:11.828+03:00  INFO 26444 --- [main] com.zaxxer.hikari.HikariDataSource       : customer-loans-conn-pool - Starting...
+2023-07-13T09:56:12.215+03:00  INFO 26444 --- [main] com.zaxxer.hikari.pool.HikariPool        : customer-loans-conn-pool - Added connection org.postgresql.jdbc.PgConnection@31ab4859
+2023-07-13T09:56:12.221+03:00  INFO 26444 --- [main] com.zaxxer.hikari.HikariDataSource       : customer-loans-conn-pool - Start completed.
+2023-07-13T09:56:12.634+03:00  INFO 26444 --- [main] SQL dialect                              : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2023-07-13T09:56:14.717+03:00  INFO 26444 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-07-13T09:56:14.732+03:00  INFO 26444 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-07-13T09:56:15.756+03:00  WARN 26444 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-07-13T09:56:16.478+03:00  INFO 26444 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 14 endpoint(s) beneath base path '/admin'
+2023-07-13T09:56:16.559+03:00  INFO 26444 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@5e8bc83e, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6c75c5e8, org.springframework.security.web.context.SecurityContextHolderFilter@7be3a837, org.springframework.security.web.header.HeaderWriterFilter@2a045e85, org.springframework.web.filter.CorsFilter@69374e28, org.springframework.security.web.authentication.logout.LogoutFilter@41962299, com.example.demo.filter.JwtAuthFilter@477e5b69, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@640028f2, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5c7b504, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@39c93af6, org.springframework.security.web.session.SessionManagementFilter@4193da4d, org.springframework.security.web.access.ExceptionTranslationFilter@3d8512e9, org.springframework.security.web.access.intercept.AuthorizationFilter@435e224d]
+2023-07-13T09:56:17.161+03:00  INFO 26444 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-07-13T09:56:17.200+03:00  INFO 26444 --- [main] c.example.demo.LoanServiceApplication    : Started LoanServiceApplication in 11.725 seconds (process running for 12.659)
+2023-07-13T09:56:17.275+03:00  INFO 26444 --- [main] c.example.demo.LoanServiceApplication    : Searching for user with name: admin
+2023-07-13T09:56:17.691+03:00  INFO 26444 --- [main] c.example.demo.LoanServiceApplication    : Found User: UserInfo(id=1, name=admin, password=$2a$10$MzKfvf.dG8keIRBwTVAhHe0bkrz8bCDPtm0lf08BgwySkS8fVGzW2)
+2023-07-13T09:56:17.691+03:00  INFO 26444 --- [main] c.example.demo.LoanServiceApplication    : [Inside the CommandLineRunner method]: persisting customer data to the database
+2023-07-13T09:56:18.340+03:00  INFO 26444 --- [main] c.example.demo.LoanServiceApplication    : The generated token is: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTY4OTIzMTM3OCwiZXhwIjoxNjg5ODc5Mzc4fQ.fo7YO9yGv_D3SVdyO7uoYKl0Nrzedf4YHEKF2kOEb7g
+2023-07-13T09:56:18.341+03:00  INFO 26444 --- [main] c.example.demo.LoanServiceApplication    : [Inside the CommandLineRunner method]: calling the RestTemplate class which invokes the api
+2023-07-13T09:56:18.503+03:00  INFO 26444 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-07-13T09:56:18.503+03:00  INFO 26444 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-07-13T09:56:18.506+03:00  INFO 26444 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2023-07-13T09:56:18.691+03:00  INFO 26444 --- [http-nio-8080-exec-1] com.example.demo.services.LoanService    : [Inside the getLoanStatus method]: Retrieving customer loans for account number 1886066231 from the database
+2023-07-13T09:56:18.789+03:00  INFO 26444 --- [http-nio-8080-exec-2] com.example.demo.services.LoanService    : [Inside the getLoanStatus method]: Retrieving customer loans for account number 1604548931 from the database
+2023-07-13T09:56:18.821+03:00  INFO 26444 --- [http-nio-8080-exec-3] com.example.demo.services.LoanService    : [Inside the getLoanStatus method]: Retrieving customer loans for account number 1182579048 from the database
+2023-07-13T09:56:18.873+03:00  INFO 26444 --- [http-nio-8080-exec-4] com.example.demo.services.LoanService    : [Inside the getLoanStatus method]: Retrieving customer loans for account number 1071547136 from the database
+2023-07-13T09:56:18.906+03:00  INFO 26444 --- [http-nio-8080-exec-5] com.example.demo.services.LoanService    : [Inside the getLoanStatus method]: Retrieving customer loans for account number 1854373634 from the database
+2023-07-13T09:56:34.333+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.335+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.336+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.336+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.336+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.339+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.340+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.341+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.342+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.343+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.344+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.345+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.346+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.347+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.347+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.351+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.351+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.351+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.355+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.357+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.358+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.359+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.360+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.360+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.361+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.361+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.362+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.362+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.362+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.362+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.362+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.362+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.362+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.366+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.366+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.367+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.367+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.367+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.367+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.367+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.367+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.367+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.367+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.367+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.371+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.373+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.375+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.376+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.376+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.377+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.378+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.379+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.380+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.380+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.380+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.380+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.380+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.380+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.384+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.384+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.385+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.385+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.385+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.385+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.385+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.385+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.388+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.388+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.390+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.390+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.391+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.391+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.391+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.392+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.392+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.393+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.393+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.394+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.394+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.395+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.395+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.395+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.395+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.395+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.395+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.395+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.399+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.399+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.399+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.400+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.400+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.400+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.401+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.401+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.401+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.402+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.402+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.402+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.402+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.402+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.402+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.405+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.405+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.406+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.406+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.407+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.407+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.407+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.408+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.408+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.409+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.409+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.410+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.410+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.410+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.411+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.411+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.411+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.412+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.412+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.413+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.413+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.413+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.414+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.414+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.415+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.415+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.416+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.416+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.416+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.416+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.416+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.416+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.416+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.416+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.416+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.416+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.420+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.420+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.420+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.420+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.422+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.423+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.423+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.424+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.424+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.425+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.426+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.426+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.427+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.427+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.428+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.429+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.429+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.429+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.429+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.429+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.429+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.429+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.429+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.429+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.433+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.433+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.433+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.433+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.433+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.433+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.433+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.433+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.433+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.433+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.437+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.437+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.438+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.438+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.439+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.440+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.441+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.442+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.442+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.443+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.443+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.444+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.444+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.445+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.445+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.445+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.445+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.445+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.445+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.445+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.445+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.450+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.451+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.451+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.451+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.451+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.451+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.451+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.451+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.451+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.451+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.455+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.455+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.456+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.456+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.456+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.457+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.457+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.458+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.458+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.459+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.460+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.461+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.461+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.462+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.462+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.463+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.463+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.464+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.464+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.464+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.466+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.466+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.467+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.467+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.467+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.467+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.469+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.469+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.470+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.470+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.470+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.472+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.473+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.473+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.474+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.475+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.476+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.476+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.477+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.478+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.479+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.480+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.480+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.480+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.480+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.481+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.482+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.482+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.483+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.484+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.484+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.484+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.484+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.484+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.484+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.484+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.484+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.487+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.488+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.490+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.491+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.491+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.492+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.492+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.493+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.493+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.494+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.494+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.495+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.495+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.496+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.497+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.497+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.497+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.497+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.497+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.497+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.497+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.497+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.497+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.497+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.497+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.502+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.502+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.503+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.503+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.504+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.504+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.505+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.505+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.506+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.507+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.507+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.507+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.508+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.508+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.509+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.510+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.510+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.511+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.512+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.512+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.513+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.513+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.513+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.513+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.513+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.513+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.513+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.513+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.513+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.513+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.513+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.517+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.517+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.518+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.518+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:56:34.518+03:00  INFO 26444 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getCustomers method]: Retrieving customer loans from the database: []
+2023-07-13T09:58:00.107+03:00  INFO 9908 --- [main] c.example.demo.LoanServiceApplication    : Starting LoanServiceApplication using Java 17.0.4 with PID 9908 (C:\My_projects\customer-loans\target\classes started by C849152 in C:\My_projects\customer-loans)
+2023-07-13T09:58:00.113+03:00  INFO 9908 --- [main] c.example.demo.LoanServiceApplication    : The following 1 profile is active: "dev"
+2023-07-13T09:58:03.963+03:00  INFO 9908 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-07-13T09:58:04.163+03:00  INFO 9908 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 178 ms. Found 3 JPA repository interfaces.
+2023-07-13T09:58:06.176+03:00  INFO 9908 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-07-13T09:58:06.191+03:00  INFO 9908 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-07-13T09:58:06.192+03:00  INFO 9908 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.7]
+2023-07-13T09:58:06.456+03:00  INFO 9908 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-07-13T09:58:06.457+03:00  INFO 9908 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 6160 ms
+2023-07-13T09:58:06.915+03:00  INFO 9908 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-07-13T09:58:07.033+03:00  INFO 9908 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.1.7.Final
+2023-07-13T09:58:07.718+03:00  INFO 9908 --- [main] com.zaxxer.hikari.HikariDataSource       : customer-loans-conn-pool - Starting...
+2023-07-13T09:58:08.196+03:00  INFO 9908 --- [main] com.zaxxer.hikari.pool.HikariPool        : customer-loans-conn-pool - Added connection org.postgresql.jdbc.PgConnection@55e91e61
+2023-07-13T09:58:08.203+03:00  INFO 9908 --- [main] com.zaxxer.hikari.HikariDataSource       : customer-loans-conn-pool - Start completed.
+2023-07-13T09:58:08.637+03:00  INFO 9908 --- [main] SQL dialect                              : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2023-07-13T09:58:10.930+03:00  INFO 9908 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-07-13T09:58:10.947+03:00  INFO 9908 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-07-13T09:58:12.064+03:00  WARN 9908 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-07-13T09:58:12.881+03:00  INFO 9908 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 14 endpoint(s) beneath base path '/admin'
+2023-07-13T09:58:12.981+03:00  INFO 9908 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@5c141c7b, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@14f254f, org.springframework.security.web.context.SecurityContextHolderFilter@2703785e, org.springframework.security.web.header.HeaderWriterFilter@1e084a26, org.springframework.web.filter.CorsFilter@363ee411, org.springframework.security.web.authentication.logout.LogoutFilter@c040c8d, com.example.demo.filter.JwtAuthFilter@4a490518, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5a2297d7, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4b8601a1, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@4df54c1, org.springframework.security.web.session.SessionManagementFilter@4cbd17b3, org.springframework.security.web.access.ExceptionTranslationFilter@1dbb9a4a, org.springframework.security.web.access.intercept.AuthorizationFilter@48a2b492]
+2023-07-13T09:58:13.722+03:00  INFO 9908 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-07-13T09:58:13.760+03:00  INFO 9908 --- [main] c.example.demo.LoanServiceApplication    : Started LoanServiceApplication in 14.691 seconds (process running for 16.4)
+2023-07-13T09:58:13.843+03:00  INFO 9908 --- [main] c.example.demo.LoanServiceApplication    : Searching for user with name: admin
+2023-07-13T09:58:14.097+03:00  INFO 9908 --- [main] c.example.demo.LoanServiceApplication    : Found User: UserInfo(id=1, name=admin, password=$2a$10$MzKfvf.dG8keIRBwTVAhHe0bkrz8bCDPtm0lf08BgwySkS8fVGzW2)
+2023-07-13T09:58:14.098+03:00  INFO 9908 --- [main] c.example.demo.LoanServiceApplication    : [Inside the CommandLineRunner method]: persisting customer data to the database
+2023-07-13T09:58:14.671+03:00  INFO 9908 --- [main] c.example.demo.LoanServiceApplication    : The generated token is: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTY4OTIzMTQ5NCwiZXhwIjoxNjg5ODc5NDk0fQ.oU7Mj37wO581UaBmqtGvYDIEmVPo2Nc3RVVcYKzCBeQ
+2023-07-13T09:58:14.673+03:00  INFO 9908 --- [main] c.example.demo.LoanServiceApplication    : [Inside the CommandLineRunner method]: calling the RestTemplate class which invokes the api
+2023-07-13T09:58:14.826+03:00  INFO 9908 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-07-13T09:58:14.828+03:00  INFO 9908 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-07-13T09:58:14.830+03:00  INFO 9908 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2023-07-13T09:58:15.024+03:00  INFO 9908 --- [http-nio-8080-exec-1] com.example.demo.services.LoanService    : [Inside the getLoanStatus method]: Retrieving customer loans for account number 1043256065 from the database
+2023-07-13T09:58:15.119+03:00  INFO 9908 --- [http-nio-8080-exec-2] com.example.demo.services.LoanService    : [Inside the getLoanStatus method]: Retrieving customer loans for account number 1361380408 from the database
+2023-07-13T09:58:15.155+03:00  INFO 9908 --- [http-nio-8080-exec-4] com.example.demo.services.LoanService    : [Inside the getLoanStatus method]: Retrieving customer loans for account number 1140439481 from the database
+2023-07-13T09:58:15.189+03:00  INFO 9908 --- [http-nio-8080-exec-5] com.example.demo.services.LoanService    : [Inside the getLoanStatus method]: Retrieving customer loans for account number 1016945411 from the database
+2023-07-13T09:58:15.223+03:00  INFO 9908 --- [http-nio-8080-exec-3] com.example.demo.services.LoanService    : [Inside the getLoanStatus method]: Retrieving customer loans for account number 1646511948 from the database
+2023-07-13T09:59:16.349+03:00  INFO 16364 --- [main] c.example.demo.LoanServiceApplication    : Starting LoanServiceApplication using Java 17.0.4 with PID 16364 (C:\My_projects\customer-loans\target\classes started by C849152 in C:\My_projects\customer-loans)
+2023-07-13T09:59:16.354+03:00  INFO 16364 --- [main] c.example.demo.LoanServiceApplication    : The following 1 profile is active: "dev"
+2023-07-13T09:59:18.933+03:00  INFO 16364 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-07-13T09:59:19.071+03:00  INFO 16364 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 122 ms. Found 3 JPA repository interfaces.
+2023-07-13T09:59:20.402+03:00  INFO 16364 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-07-13T09:59:20.415+03:00  INFO 16364 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-07-13T09:59:20.415+03:00  INFO 16364 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.7]
+2023-07-13T09:59:20.662+03:00  INFO 16364 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-07-13T09:59:20.664+03:00  INFO 16364 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4177 ms
+2023-07-13T09:59:21.094+03:00  INFO 16364 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-07-13T09:59:21.204+03:00  INFO 16364 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.1.7.Final
+2023-07-13T09:59:21.825+03:00  INFO 16364 --- [main] com.zaxxer.hikari.HikariDataSource       : customer-loans-conn-pool - Starting...
+2023-07-13T09:59:22.185+03:00  INFO 16364 --- [main] com.zaxxer.hikari.pool.HikariPool        : customer-loans-conn-pool - Added connection org.postgresql.jdbc.PgConnection@2d9de284
+2023-07-13T09:59:22.194+03:00  INFO 16364 --- [main] com.zaxxer.hikari.HikariDataSource       : customer-loans-conn-pool - Start completed.
+2023-07-13T09:59:22.575+03:00  INFO 16364 --- [main] SQL dialect                              : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2023-07-13T09:59:24.819+03:00  INFO 16364 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-07-13T09:59:24.837+03:00  INFO 16364 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-07-13T09:59:26.017+03:00  WARN 16364 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-07-13T09:59:26.748+03:00  INFO 16364 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 14 endpoint(s) beneath base path '/admin'
+2023-07-13T09:59:26.823+03:00  INFO 16364 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@1dba7721, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@24381e4a, org.springframework.security.web.context.SecurityContextHolderFilter@53fb3e1b, org.springframework.security.web.header.HeaderWriterFilter@c040c8d, org.springframework.web.filter.CorsFilter@6c3627c, org.springframework.security.web.authentication.logout.LogoutFilter@3903cfc9, com.example.demo.filter.JwtAuthFilter@7e4dddee, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@48a2b492, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@14f254f, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@e5d9fa7, org.springframework.security.web.session.SessionManagementFilter@7364073b, org.springframework.security.web.access.ExceptionTranslationFilter@772589ed, org.springframework.security.web.access.intercept.AuthorizationFilter@20f3291d]
+2023-07-13T09:59:27.439+03:00  INFO 16364 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-07-13T09:59:27.471+03:00  INFO 16364 --- [main] c.example.demo.LoanServiceApplication    : Started LoanServiceApplication in 12.156 seconds (process running for 13.172)
+2023-07-13T09:59:27.559+03:00  INFO 16364 --- [main] c.example.demo.LoanServiceApplication    : Searching for user with name: admin
+2023-07-13T09:59:27.848+03:00  INFO 16364 --- [main] c.example.demo.LoanServiceApplication    : Found User: UserInfo(id=1, name=admin, password=$2a$10$MzKfvf.dG8keIRBwTVAhHe0bkrz8bCDPtm0lf08BgwySkS8fVGzW2)
+2023-07-13T09:59:27.849+03:00  INFO 16364 --- [main] c.example.demo.LoanServiceApplication    : [Inside the CommandLineRunner method]: persisting customer data to the database
+2023-07-13T09:59:28.386+03:00  INFO 16364 --- [main] c.example.demo.LoanServiceApplication    : The generated token is: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTY4OTIzMTU2OCwiZXhwIjoxNjg5ODc5NTY4fQ.RFMrAmsALVVMtPO8U3UHXeeU2MkZ8cVN31CzbR2HPZI
+2023-07-13T09:59:28.387+03:00  INFO 16364 --- [main] c.example.demo.LoanServiceApplication    : [Inside the CommandLineRunner method]: calling the RestTemplate class which invokes the api
+2023-07-13T09:59:28.533+03:00  INFO 16364 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-07-13T09:59:28.533+03:00  INFO 16364 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-07-13T09:59:28.536+03:00  INFO 16364 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2023-07-13T09:59:28.734+03:00  INFO 16364 --- [http-nio-8080-exec-1] com.example.demo.services.LoanService    : [Inside the getLoanStatus method]: Retrieving customer loans for account number 1330442494 from the database
+2023-07-13T09:59:28.837+03:00  INFO 16364 --- [http-nio-8080-exec-2] com.example.demo.services.LoanService    : [Inside the getLoanStatus method]: Retrieving customer loans for account number 1373551798 from the database
+2023-07-13T09:59:28.867+03:00  INFO 16364 --- [http-nio-8080-exec-3] com.example.demo.services.LoanService    : [Inside the getLoanStatus method]: Retrieving customer loans for account number 1112842645 from the database
+2023-07-13T09:59:28.903+03:00  INFO 16364 --- [http-nio-8080-exec-4] com.example.demo.services.LoanService    : [Inside the getLoanStatus method]: Retrieving customer loans for account number 1066574069 from the database
+2023-07-13T09:59:28.936+03:00  INFO 16364 --- [http-nio-8080-exec-5] com.example.demo.services.LoanService    : [Inside the getLoanStatus method]: Retrieving customer loans for account number 1386086661 from the database
+2023-07-13T09:59:43.837+03:00  INFO 16364 --- [http-nio-8080-exec-8] com.example.demo.services.LoanService    : [Inside the getLoanStatus method]: Retrieving customer loans for account number 1114946631 from the database
+2023-07-13T10:00:06.336+03:00  INFO 16340 --- [main] c.example.demo.LoanServiceApplication    : Starting LoanServiceApplication using Java 17.0.4 with PID 16340 (C:\My_projects\customer-loans\target\classes started by C849152 in C:\My_projects\customer-loans)
+2023-07-13T10:00:06.342+03:00  INFO 16340 --- [main] c.example.demo.LoanServiceApplication    : The following 1 profile is active: "dev"
+2023-07-13T10:00:08.802+03:00  INFO 16340 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-07-13T10:00:08.935+03:00  INFO 16340 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 114 ms. Found 3 JPA repository interfaces.
+2023-07-13T10:00:10.251+03:00  INFO 16340 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-07-13T10:00:10.272+03:00  INFO 16340 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-07-13T10:00:10.273+03:00  INFO 16340 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.7]
+2023-07-13T10:00:10.535+03:00  INFO 16340 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-07-13T10:00:10.537+03:00  INFO 16340 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4054 ms
+2023-07-13T10:00:11.024+03:00  INFO 16340 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-07-13T10:00:11.174+03:00  INFO 16340 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.1.7.Final
+2023-07-13T10:00:11.817+03:00  INFO 16340 --- [main] com.zaxxer.hikari.HikariDataSource       : customer-loans-conn-pool - Starting...
+2023-07-13T10:00:12.228+03:00  INFO 16340 --- [main] com.zaxxer.hikari.pool.HikariPool        : customer-loans-conn-pool - Added connection org.postgresql.jdbc.PgConnection@166e5a6d
+2023-07-13T10:00:12.231+03:00  INFO 16340 --- [main] com.zaxxer.hikari.HikariDataSource       : customer-loans-conn-pool - Start completed.
+2023-07-13T10:00:12.612+03:00  INFO 16340 --- [main] SQL dialect                              : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2023-07-13T10:00:14.639+03:00  INFO 16340 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-07-13T10:00:14.657+03:00  INFO 16340 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-07-13T10:00:15.785+03:00  WARN 16340 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-07-13T10:00:16.425+03:00  INFO 16340 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 14 endpoint(s) beneath base path '/admin'
+2023-07-13T10:00:16.494+03:00  INFO 16340 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@20f3291d, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2f51b100, org.springframework.security.web.context.SecurityContextHolderFilter@7364073b, org.springframework.security.web.header.HeaderWriterFilter@5c7b504, org.springframework.web.filter.CorsFilter@654dbb78, org.springframework.security.web.authentication.logout.LogoutFilter@6c75c5e8, com.example.demo.filter.JwtAuthFilter@7890fbf9, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5cfde2a4, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7bf997e0, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1dba7721, org.springframework.security.web.session.SessionManagementFilter@2bb118ae, org.springframework.security.web.access.ExceptionTranslationFilter@2ef3efcc, org.springframework.security.web.access.intercept.AuthorizationFilter@2e243122]
+2023-07-13T10:00:17.089+03:00  INFO 16340 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-07-13T10:00:17.125+03:00  INFO 16340 --- [main] c.example.demo.LoanServiceApplication    : Started LoanServiceApplication in 11.734 seconds (process running for 12.871)
+2023-07-13T10:00:17.198+03:00  INFO 16340 --- [main] c.example.demo.LoanServiceApplication    : Searching for user with name: admin
+2023-07-13T10:00:17.465+03:00  INFO 16340 --- [main] c.example.demo.LoanServiceApplication    : Found User: UserInfo(id=1, name=admin, password=$2a$10$MzKfvf.dG8keIRBwTVAhHe0bkrz8bCDPtm0lf08BgwySkS8fVGzW2)
+2023-07-13T10:00:17.473+03:00  INFO 16340 --- [main] c.example.demo.LoanServiceApplication    : [Inside the CommandLineRunner method]: persisting customer data to the database
+2023-07-13T10:00:18.102+03:00  INFO 16340 --- [main] c.example.demo.LoanServiceApplication    : The generated token is: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTY4OTIzMTYxOCwiZXhwIjoxNjg5ODc5NjE4fQ.A_r_m3aCIwdD9D8VIUkMkRqjJOiEqQBoyoN4yPqIL2k
+2023-07-13T10:00:18.102+03:00  INFO 16340 --- [main] c.example.demo.LoanServiceApplication    : [Inside the CommandLineRunner method]: calling the RestTemplate class which invokes the api
+2023-07-13T10:00:18.255+03:00  INFO 16340 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-07-13T10:00:18.255+03:00  INFO 16340 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-07-13T10:00:18.257+03:00  INFO 16340 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2023-07-13T10:00:18.462+03:00  INFO 16340 --- [http-nio-8080-exec-1] com.example.demo.services.LoanService    : [Inside the getLoanStatus method]: Retrieving customer loans for account number 1415492618 from the database
+2023-07-13T10:00:18.579+03:00  INFO 16340 --- [http-nio-8080-exec-2] com.example.demo.services.LoanService    : [Inside the getLoanStatus method]: Retrieving customer loans for account number 1608189969 from the database
+2023-07-13T10:00:18.615+03:00  INFO 16340 --- [http-nio-8080-exec-3] com.example.demo.services.LoanService    : [Inside the getLoanStatus method]: Retrieving customer loans for account number 1707274036 from the database
+2023-07-13T10:00:18.646+03:00  INFO 16340 --- [http-nio-8080-exec-4] com.example.demo.services.LoanService    : [Inside the getLoanStatus method]: Retrieving customer loans for account number 1490620663 from the database
+2023-07-13T10:00:18.682+03:00  INFO 16340 --- [http-nio-8080-exec-5] com.example.demo.services.LoanService    : [Inside the getLoanStatus method]: Retrieving customer loans for account number 1693602560 from the database
+2023-07-13T10:00:46.455+03:00  INFO 16340 --- [http-nio-8080-exec-7] com.example.demo.services.LoanService    : [Inside the getLoanStatus method]: Retrieving customer loans for account number 1114946631 from the database
+2023-07-13T10:02:11.133+03:00  INFO 29796 --- [main] c.example.demo.LoanServiceApplication    : Starting LoanServiceApplication using Java 17.0.4 with PID 29796 (C:\My_projects\customer-loans\target\classes started by C849152 in C:\My_projects\customer-loans)
+2023-07-13T10:02:11.137+03:00  INFO 29796 --- [main] c.example.demo.LoanServiceApplication    : The following 1 profile is active: "dev"
+2023-07-13T10:02:13.500+03:00  INFO 29796 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-07-13T10:02:13.651+03:00  INFO 29796 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 132 ms. Found 3 JPA repository interfaces.
+2023-07-13T10:02:14.962+03:00  INFO 29796 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-07-13T10:02:14.978+03:00  INFO 29796 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-07-13T10:02:14.978+03:00  INFO 29796 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.7]
+2023-07-13T10:02:15.226+03:00  INFO 29796 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-07-13T10:02:15.227+03:00  INFO 29796 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3932 ms
+2023-07-13T10:02:15.666+03:00  INFO 29796 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-07-13T10:02:15.775+03:00  INFO 29796 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.1.7.Final
+2023-07-13T10:02:16.406+03:00  INFO 29796 --- [main] com.zaxxer.hikari.HikariDataSource       : customer-loans-conn-pool - Starting...
+2023-07-13T10:02:16.821+03:00  INFO 29796 --- [main] com.zaxxer.hikari.pool.HikariPool        : customer-loans-conn-pool - Added connection org.postgresql.jdbc.PgConnection@1201e064
+2023-07-13T10:02:16.825+03:00  INFO 29796 --- [main] com.zaxxer.hikari.HikariDataSource       : customer-loans-conn-pool - Start completed.
+2023-07-13T10:02:17.218+03:00  INFO 29796 --- [main] SQL dialect                              : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2023-07-13T10:02:19.180+03:00  INFO 29796 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-07-13T10:02:19.192+03:00  INFO 29796 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-07-13T10:02:20.233+03:00  WARN 29796 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-07-13T10:02:20.938+03:00  INFO 29796 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 14 endpoint(s) beneath base path '/admin'
+2023-07-13T10:02:21.018+03:00  INFO 29796 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@4010f232, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@24be6e34, org.springframework.security.web.context.SecurityContextHolderFilter@71f86562, org.springframework.security.web.header.HeaderWriterFilter@4917992b, org.springframework.web.filter.CorsFilter@39f3285d, org.springframework.security.web.authentication.logout.LogoutFilter@7fba30fe, com.example.demo.filter.JwtAuthFilter@3606eee9, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@14f254f, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@c950fd, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5b312863, org.springframework.security.web.session.SessionManagementFilter@f5a680, org.springframework.security.web.access.ExceptionTranslationFilter@6f627a1a, org.springframework.security.web.access.intercept.AuthorizationFilter@24381e4a]
+2023-07-13T10:02:21.633+03:00  INFO 29796 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-07-13T10:02:21.677+03:00  INFO 29796 --- [main] c.example.demo.LoanServiceApplication    : Started LoanServiceApplication in 11.504 seconds (process running for 12.488)
+2023-07-13T10:02:21.751+03:00  INFO 29796 --- [main] c.example.demo.LoanServiceApplication    : Searching for user with name: admin
+2023-07-13T10:02:22.040+03:00  INFO 29796 --- [main] c.example.demo.LoanServiceApplication    : Found User: UserInfo(id=1, name=admin, password=$2a$10$MzKfvf.dG8keIRBwTVAhHe0bkrz8bCDPtm0lf08BgwySkS8fVGzW2)
+2023-07-13T10:02:22.042+03:00  INFO 29796 --- [main] c.example.demo.LoanServiceApplication    : [Inside the CommandLineRunner method]: persisting customer data to the database
+2023-07-13T10:02:22.766+03:00  INFO 29796 --- [main] c.example.demo.LoanServiceApplication    : The generated token is: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTY4OTIzMTc0MiwiZXhwIjoxNjg5ODc5NzQyfQ.ZmGHU7wkX54P75NmKo__b0Q68kpg2u4tw6Jlnxo8kwA
+2023-07-13T10:02:22.768+03:00  INFO 29796 --- [main] c.example.demo.LoanServiceApplication    : [Inside the CommandLineRunner method]: calling the RestTemplate class which invokes the api
+2023-07-13T10:02:22.949+03:00  INFO 29796 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-07-13T10:02:22.949+03:00  INFO 29796 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-07-13T10:02:22.951+03:00  INFO 29796 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2023-07-13T10:02:23.171+03:00  INFO 29796 --- [http-nio-8080-exec-1] com.example.demo.services.LoanService    : [Inside the getLoanStatus method]: Retrieving customer loans for account number 1018066624 from the database
+2023-07-13T10:02:23.282+03:00  INFO 29796 --- [http-nio-8080-exec-2] com.example.demo.services.LoanService    : [Inside the getLoanStatus method]: Retrieving customer loans for account number 1651579431 from the database
+2023-07-13T10:02:23.314+03:00  INFO 29796 --- [http-nio-8080-exec-4] com.example.demo.services.LoanService    : [Inside the getLoanStatus method]: Retrieving customer loans for account number 1487164174 from the database
+2023-07-13T10:02:23.344+03:00  INFO 29796 --- [http-nio-8080-exec-3] com.example.demo.services.LoanService    : [Inside the getLoanStatus method]: Retrieving customer loans for account number 1378920707 from the database
+2023-07-13T10:02:23.375+03:00  INFO 29796 --- [http-nio-8080-exec-5] com.example.demo.services.LoanService    : [Inside the getLoanStatus method]: Retrieving customer loans for account number 1899790696 from the database

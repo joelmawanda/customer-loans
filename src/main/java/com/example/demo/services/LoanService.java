@@ -56,4 +56,3 @@ public class LoanService {
                 .collect(Collectors.toList());
     }
 }
-
