@@ -2,6 +2,9 @@ package com.example.demo.dtos;
 
 import com.example.demo.entities.Customer;
 import com.example.demo.entities.Loan;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import com.fasterxml.jackson.databind.PropertyNamingStrategies;
+import com.fasterxml.jackson.databind.annotation.JsonNaming;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.FetchType;
@@ -19,6 +22,13 @@ import java.util.Set;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+@JsonPropertyOrder({
+        "customer_id",
+        "customer_name",
+        "account_number",
+        "loans"
+})
+@JsonNaming(PropertyNamingStrategies.SnakeCaseStrategy.class)
 public class CustomerDTO {
     private Long customerId;
 
